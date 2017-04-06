@@ -6,6 +6,10 @@ pragma solidity ^0.4.4;
 contract Modifiers {
   
   address   public owner;
+  // Minimum acceptable offer
+  uint  constant  minimumAccetableOffer = 100;
+  uint[]    lastBid;
+  address[] lastBidder
 
   function  Modifiers(){
     owner = msg.sender;
@@ -13,11 +17,16 @@ contract Modifiers {
 
   // Restricts execution by owner only
   modifier  ownerOnly {
-
-    return; // Function body not executed at all
-
     if(msg.sender == owner){
       _;
+    } else {
+      throw;
+    }
+  }
+
+   modifier  minimumAcceptable(){
+    if(msg.value >= minimumAccetableOffer){
+     _;
     } else {
       throw;
     }
@@ -32,18 +41,9 @@ contract Modifiers {
     owner = newOwner;
   }
 
-  // Minimum acceptable offer
-  uint  constant  minimumAccetableOffer = 100;
-  uint[]    lastBid;
-  address[] lastBidder;
+;
 
-  modifier  minimumAcceptable(){
-    if(msg.value >= minimumAccetableOffer){
-     _;
-    } else {
-      throw;
-    }
-  }
+ 
 
   function  bidForOwnership() payable returns(bool)  {
     // Code the bid pushing
