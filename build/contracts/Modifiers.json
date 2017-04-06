@@ -1,0 +1,78 @@
+{
+  "contract_name": "Modifiers",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "checkOwnership",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "bidForOwnership",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x606060405234610000575b60008054600160a060020a03191633600160a060020a03161790555b5b610180806100366000396000f300606060405263ffffffff60e060020a600035041663219a1d77811461004557806360ace1ec146100665780638da5cb5b14610082578063f2fde38b146100ab575b610000565b34610000576100526100d8565b604080519115158252519081900360200190f35b6100526100ee565b604080519115158252519081900360200190f35b346100005761008f6100f4565b60408051600160a060020a039092168252519081900360200190f35b3461000057610052600160a060020a0360043516610103565b604080519115158252519081900360200190f35b60005433600160a060020a039081169116145b90565b60015b90565b600054600160a060020a031681565b6000805433600160a060020a0390811691161415610040576000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0384161790555b61014e565b610000565b5b9190505600a165627a7a723058204412f5111ae74d2fc58eb49d73853b76318e33ac88b97be21792ea0d54b516c50029",
+  "networks": {
+    "1490794988279": {
+      "events": {},
+      "links": {},
+      "address": "0x1aadea34aaa00c872116868c4ee8e8fbf7756d6f",
+      "updated_at": 1491476112036
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1491495302036
+}

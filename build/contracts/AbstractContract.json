@@ -1,0 +1,49 @@
+{
+  "contract_name": "AbstractContract",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getAgentInformation",
+      "outputs": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "commission",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "saleAmount",
+          "type": "uint16"
+        }
+      ],
+      "name": "calculateAgentCommission",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "type": "constructor"
+    }
+  ],
+  "unlinked_binary": "0x6060604052346000575b60358060166000396000f30060606040525b60005600a165627a7a72305820a9738c316ca9d36c307bc7a0c54a9229768d0a27c121c929ed28d38c4b86f3c60029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1490548282215
+}

@@ -1,0 +1,52 @@
+{
+  "contract_name": "ReceiveEthers",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "ethersReceieved",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "creationTime",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "payable": true,
+      "type": "fallback"
+    }
+  ],
+  "unlinked_binary": "0x6060604052600160025534610000575b5b5b60be8061001f6000396000f3006060604052361560375763ffffffff60e060020a6000350416633ccfd60b8114603f5780639a919bd214604b578063d8270dce146067575b603d5b5b565b005b34600057603d603a565b005b3460005760556086565b60408051918252519081900360200190f35b346000576055608c565b60408051918252519081900360200190f35b5b565b60015481565b600254815600a165627a7a72305820085a9b51b06626bc6cf04e6feab198b35114ba603407d453ad07576912d830f80029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1490867416071
+}
