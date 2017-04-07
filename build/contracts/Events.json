@@ -1,0 +1,71 @@
+{
+  "contract_name": "Events",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "bid",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "who",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "howmuch",
+          "type": "uint256"
+        }
+      ],
+      "name": "NewHighBid",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "who",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "LostBid",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x606060405242620697800160005534610000575b6103e86003555b5b6102b28061002a6000396000f300606060405263ffffffff60e060020a6000350416637aef951c8114610024575b610000565b610072600480803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284375094965061008695505050505050565b604080519115158252519081900360200190f35b600060005442101561001f57600354600a0134111561026e57600180546040805160208082526002805460001996811615610100029690960190951685900490820181905273ffffffffffffffffffffffffffffffffffffffff909316937f9436297fe0684cdcd201bf73a26ed037e1e99c2d99c3e2f2567b8b5ec5adc2ba9390928291908201908490801561015d5780601f106101325761010080835404028352916020019161015d565b820191906000526020600020905b81548152906001019060200180831161014057829003601f168201915b50509250505060405180910390a2610173610283565b6001805473ffffffffffffffffffffffffffffffffffffffff19163373ffffffffffffffffffffffffffffffffffffffff16178155825160028054600082905290927f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace6020610100928416159290920260001901909216849004601f908101829004830193929187019083901061021557805160ff1916838001178555610242565b82800160010185558215610242579182015b82811115610242578251825591602001919060010190610227565b5b506102639291505b8082111561025f576000815560010161024b565b5090565b505034600355610272565b5060005b5b61027d565b610000565b5b919050565b5b5600a165627a7a72305820953123b80496d2fcbd391280aaaf4312898308ca73e1555e51e0c7a9aa2212190029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1491531291846
+}

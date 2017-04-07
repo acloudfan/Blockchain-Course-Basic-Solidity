@@ -18,6 +18,7 @@ contract('Modifiers', function (accounts) {
       modifiers = instance;
       // Simulate a transaction sent from accounts[1] 
       // Since accounts[1] is NOT the owner - this would fail
+      // In truffle it will throw exception and terminate the script execution
       modifiers.transferOwnership(accounts[1], {from:accounts[1]});
       return modifiers.owner.call();
     }).then(function (result) {

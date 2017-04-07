@@ -8,8 +8,8 @@ contract Modifiers {
   address   public owner;
   // Minimum acceptable offer
   uint  constant  minimumAccetableOffer = 100;
-  uint[]    lastBid;
-  address[] lastBidder
+  uint[]          lastBid;
+  address[]       lastBidder;
 
   function  Modifiers(){
     owner = msg.sender;
@@ -41,11 +41,8 @@ contract Modifiers {
     owner = newOwner;
   }
 
-;
 
- 
-
-  function  bidForOwnership() payable returns(bool)  {
+  function  bidForOwnership() payable minimumAcceptable returns(bool)  {
     // Code the bid pushing
     return true;
   }
