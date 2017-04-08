@@ -17,8 +17,11 @@ contract Events {
 
   HighBidder  highBidder;
 
+  // Events emitted by contract
+  // Whenever a high bid is received
   event NewHighBid(address indexed who, string name, uint howmuch);
-  event LostBid(address indexed who, string name);
+  // High bid preceded by this event
+  event BidFailed(address indexed who, string name, uint howmuch);
 
   // Ensures that bid can be received i.e, auction not ended
   modifier timed {
@@ -36,20 +39,25 @@ contract Events {
     highBidder.bid = 1000;
   }
 
-  function  bid(string name) payable timed returns(bool) {
+  function  bid(string name) payable timed {
     // Bids allowed in increments of 10 wei
     if(msg.value > (highBidder.bid + 10)){
-      // Generate the lost bid event
-      LostBid(highBidder.bidder, highBidder.name);
       // Return the loser's bid
       returnBidToLoser();
       // Make the caller the highBidder
       highBidder.bidder = msg.sender;
       highBidder.name = name;
       highBidder.bid = msg.value;
+      // Received a high bid - emit event
+      NewHighBid(msg.sender, name, msg.value);
     } else {
-      return false;
+      // Received bid less than high bid emit event
+      BidFailed(msg.sender, name, msg.value);
     }
+  }
+
+  function  getHighBidder() returns(string name){
+    name = highBidder.name;
   }
 
   // Make sure this function is private

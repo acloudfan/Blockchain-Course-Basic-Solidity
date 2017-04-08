@@ -9,6 +9,7 @@ var FuncTypesCaller = artifacts.require("./FuncTypesCaller.sol");
 var Globals = artifacts.require("./Globals.sol");
 var ConstantsPayable = artifacts.require("./ConstantsPayable.sol");
 var Modifiers = artifacts.require("./Modifiers.sol");
+var Events = artifacts.require("./Events.sol");
 
 module.exports = function(deployer) {
   deployer.deploy(ConvertLib);
@@ -29,4 +30,5 @@ module.exports = function(deployer) {
   deployer.deploy(ConstantsPayable);
 
   deployer.deploy(Modifiers);
+  deployer.deploy(Events);
 };
