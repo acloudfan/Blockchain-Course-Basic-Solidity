@@ -19,7 +19,10 @@ contract('Modifiers', function (accounts) {
       // Simulate a transaction sent from accounts[1] 
       // Since accounts[1] is NOT the owner - this would fail
       // In truffle it will throw exception and terminate the script execution
-      modifiers.transferOwnership(accounts[1], {from:accounts[1]});
+      // This will throw exception
+     modifiers.transferOwnership(accounts[1], {from:accounts[1]});
+      // This would go OK
+      // modifiers.transferOwnership(accounts[0], {from:accounts[0]});
       return modifiers.owner.call();
     }).then(function (result) {
       console.log(result)
@@ -27,4 +30,23 @@ contract('Modifiers', function (accounts) {
       assert.equal(accounts[0], result);
     });
   });
+
+  // Multiple modifier
+  // Uncomment code below to see behavior of func with multiple modifier
+  // it("should invoke multiple modifiers", function(){
+  //   var modifiers;
+  //     return Modifiers.deployed().then(function (instance) {
+  //     modifiers = instance;
+  //     // Simulate a transaction sent from accounts[1] 
+  //     // Since accounts[1] is NOT the owner - this would fail
+  //     // In truffle it will throw exception and terminate the script execution
+  //     modifiers.testModifiers();
+  //     return modifiers.testMod.call();
+  //   }).then(function(result){
+  //     console.log("testMod=",result.toNumber());
+  //     assert.equal(1,result.toNumber());
+  //   });
+    
+  // });
+  
 });

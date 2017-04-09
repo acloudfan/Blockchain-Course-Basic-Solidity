@@ -46,4 +46,18 @@ contract Modifiers {
     // Code the bid pushing
     return true;
   }
+
+  // Code for testing mutiple modifiers
+  uint  public testMod = 0;
+  modifier mod1(){
+    _;
+  }
+
+  modifier mod2(){
+    _;
+  }
+
+  function  testModifiers()  mod1  mod2{
+    testMod++;
+  }
 }

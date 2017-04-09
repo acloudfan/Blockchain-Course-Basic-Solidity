@@ -53,6 +53,8 @@ contract Events {
     } else {
       // Received bid less than high bid emit event
       BidFailed(msg.sender, name, msg.value);
+      // throw would return the ethers
+      throw;
     }
   }
 
