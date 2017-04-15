@@ -1,5 +1,6 @@
 var ConvertLib = artifacts.require("./ConvertLib.sol");
 var MetaCoin = artifacts.require("./MetaCoin.sol");
+var Calculator = artifacts.require("./Calculator.sol");
 var String = artifacts.require("./String.sol");
 var SpecialArrays = artifacts.require("./SpecialArrays.sol");
 var Funcs = artifacts.require("./Funcs.sol");
@@ -15,6 +16,7 @@ module.exports = function(deployer) {
   deployer.deploy(ConvertLib);
   deployer.link(ConvertLib, MetaCoin);
   deployer.deploy(MetaCoin);
+  deployer.deploy(Calculator);
   deployer.deploy(String);
   deployer.deploy(SpecialArrays);
   deployer.deploy(MappingEnumStruct);

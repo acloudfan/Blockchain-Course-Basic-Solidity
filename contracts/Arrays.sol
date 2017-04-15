@@ -24,6 +24,7 @@ contract Arrays {
 
 
   function testArrayOps() {
+
     // Allocate memory for 8 elements to the dynamic bool array
     dynamicBoolArray = new bool[](8);
 
@@ -39,7 +40,8 @@ contract Arrays {
     // This will give a compile error - 
     // push() not available for memory array
     // memoryArray.push(1);
-
+    // memoryArray.length=6;
+    
     // This is OK
     byteData[0] = 8;
 

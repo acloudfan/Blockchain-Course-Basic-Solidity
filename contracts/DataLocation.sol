@@ -10,6 +10,12 @@ contract DataLocation {
   // Always in storage
   uint[]  allPoints;
 
+  string  name;
+
+  // These would give compilation error as here you can declare only storage vars
+  //uint memory amount;
+  //uint[] memory some;
+
   function  defaultAction(uint[] args) returns (uint[] dat) {
     //...code..
   }
@@ -22,6 +28,10 @@ contract DataLocation {
     // uint[]  localArray;
 
     uint[]  memory   memoryArray;
+    // By default value types are created in memory
+    // But you may declare them as reference to storage
+    // Changes to loalName will be reflected in the storage va name
+    string storage localName = name;
 
     // This will give error - requires array in storage
     // forcedAction(memoryArray);
