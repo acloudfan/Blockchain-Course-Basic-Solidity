@@ -10,6 +10,7 @@ contract  AbstractContract  {
     string  name;
     uint   commission;
   }
+  
 
   agentStruct    agent;
   
