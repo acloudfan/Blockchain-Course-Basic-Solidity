@@ -3,7 +3,11 @@ pragma solidity ^0.4.4;
 /**
  * THIS CODE WILL THROW Compilation Errors
  * Code for demonstrating the use of keyword memory and storage
+ * 
+ * PLEASE IGNORE THE Warning "Unused local variable" As this is demo code ... In real code you would address the warnings
+ * Aug 8, 2017
  **/
+
 
 contract DataLocation {
 
@@ -18,6 +22,7 @@ contract DataLocation {
 
   function  defaultAction(uint[] args) returns (uint[] dat) {
     //...code..
+    
   }
   function  forcedAction(uint[] storage args) internal returns(uint[] storage dat) {
     //...code...
@@ -40,7 +45,7 @@ contract DataLocation {
     defaultAction(memoryArray);
 
     // Creates a refernce
-    uint[]  pointer = allPoints;
+    uint[] storage  pointer = allPoints;
     // This is fine caz pointer is a reference to storage array
     forcedAction(pointer);
     // This is fine too

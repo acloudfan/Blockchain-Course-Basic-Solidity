@@ -20,7 +20,8 @@ contract Modifiers {
     if(msg.sender == owner){
       _;
     } else {
-      throw;
+      /**throw;*Deprecated*/
+      revert();
     }
   }
 
@@ -28,7 +29,8 @@ contract Modifiers {
     if(msg.value >= minimumAccetableOffer){
      _;
     } else {
-      throw;
+      /**throw;*Deprecated*/
+      revert();
     }
   }
 

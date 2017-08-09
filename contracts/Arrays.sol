@@ -8,7 +8,8 @@ contract Arrays {
   bool[]     dynamicBoolArray;
 
   // Byte type storage
-  byte    byteType = 1; 
+  // Newer version of compiler requires data to be specified in hex otherwise you get a warning - Aug 8, 2017
+  byte    byteType = 0x01; 
 
   // byte array
   byte[120] bigArray;
@@ -22,7 +23,6 @@ contract Arrays {
 
 
 
-
   function testArrayOps() {
 
     // Allocate memory for 8 elements to the dynamic bool array
@@ -30,7 +30,8 @@ contract Arrays {
 
     // Allocate memory and initialize elements in the int array
     // Explicit conversion needed from uint8 to int8
-    dynamicIntArray= [1,int8(2),3];
+    // Later versions of compiler requires the 1st element to be typecasted - August 9, 2017
+    dynamicIntArray= [int8(1),2,3];
 
     // This is good
     uint8[] memory memoryArray;
@@ -43,13 +44,13 @@ contract Arrays {
     // memoryArray.length=6;
     
     // This is OK
-    byteData[0] = 8;
+    byteData[0] = 0x08;
 
     // This is not allowed - its READ Only
     // bytes8Data[6] = 0;
 
     // This is OK
-    bytesData[6] = 9;
+    bytesData[6] = 0x09;
 
     // Dynamic array - bytes - These are OK
     bytesData.length = 10;

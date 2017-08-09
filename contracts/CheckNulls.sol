@@ -12,6 +12,7 @@ contract CheckNulls {
     address owner;
     string  name;
   }
+  
   address     owner;
   string      name;
   bytes32     keyword;

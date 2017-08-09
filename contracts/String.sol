@@ -14,11 +14,9 @@ contract String {
     // bome=bytes(some);
     some=string(bome);
 
-    bome[0]=1;
+    bome[0]=0x01;
   }
 }
-
-
 
     // // Dynamic bytes array to string
     // string  data  = string(bytes_array);

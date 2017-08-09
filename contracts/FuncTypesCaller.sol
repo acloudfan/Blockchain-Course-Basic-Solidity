@@ -18,10 +18,9 @@ contract FuncTypesCaller {
 
   function  callAsTransaction(address funcTypesAddr, string str) external returns (uint){
       bool flag = funcTypesAddr.call(bytes4(sha3("indirectCall(string)")), str);
-      if(!flag) throw;
+      if(!flag) /**throw;*Deprecated*/ revert();
 
       return 0;
   }  
-
 }
 

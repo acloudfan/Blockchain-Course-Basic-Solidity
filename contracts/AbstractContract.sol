@@ -7,10 +7,10 @@ pragma solidity ^0.4.4;
 contract  AbstractContract  {
 
   struct agentStruct {
-    string  name;
+    string   name;
     uint   commission;
   }
-  
+
 
   agentStruct    agent;
   
@@ -28,5 +28,3 @@ contract  AbstractContract  {
     commission = agent.commission;
   }
 }
-
-

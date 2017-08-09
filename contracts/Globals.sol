@@ -45,6 +45,7 @@ contract Globals {
     return 1;
   }
 
+
   // Demonstrates the use of block object
   function  getBlockInformation() returns (uint number, bytes32 hash, address coinbase, uint difficulty) {
     number = block.number; // Previous block
@@ -65,7 +66,8 @@ contract Globals {
     lastCaller = name;
     // In test RPC throw cannot be tested
     // Uncommenting this line would lead to exception related to JUMP 
-    throw ;
+    /**throw ;*Deprecated*/
+    revert();
     
     return true;
   }

@@ -22,6 +22,7 @@ contract ObjectOrientation is AbstractContract, UtilContract {
   // OVERLOADING - following two functions have the same name
   function  getOwnerInfo() returns (string name, uint8 age){
   }
+  
   function  getOwnerInfo(uint8 greaterThan) returns (string name, uint8 age){
   }
 }

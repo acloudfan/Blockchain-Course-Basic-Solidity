@@ -14,6 +14,8 @@ contract MappingEnumStruct {
    continents continent;
    uint16      populationInMillion;
  }
+ 
+ 
  // Only countries in Europe added to this array
  country[]  europeanCountries;
 

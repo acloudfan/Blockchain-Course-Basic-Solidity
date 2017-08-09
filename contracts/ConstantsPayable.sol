@@ -3,7 +3,7 @@ pragma solidity ^0.4.4;
 contract ConstantsPayable {
 
   // MUST initialize storage here
-  uint    public  constant creationTime = now;
+  uint    public  creationTime ;
   string  public  lastCaller = "NOTSET";
 
   address public  lastSender;
@@ -18,8 +18,9 @@ contract ConstantsPayable {
   function   ConstantsPayable() {
     // Storage constant initialization NOT allowed
     // in constructor
-    // creationTime = now;
+    creationTime = now;
   }
+
 
   // This function can receive ethers
   function receiveEthers(string name)   payable   {

@@ -9,6 +9,7 @@ contract BasicDataTypes {
 
   function BasicDataTypes(address addr) {
 
+
     owner = addr;
     ownerInitialBalance = owner.balance;
 
@@ -29,6 +30,9 @@ contract BasicDataTypes {
     // deduced = x256;   // This will fail to compile because deduced is set to type uin8
 
     uint balance = owner.balance;
+
+    // Ignore this line - This is just make compile happy - suppress unused local var warnings - Aug 8, 2017
+    if((balance+deduced) == 0 || flag ){}
   }
 
 }

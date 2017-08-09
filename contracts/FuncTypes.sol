@@ -26,4 +26,3 @@ contract FuncTypes {
       len = lengthFunctionVar(data);
     }
 }
-

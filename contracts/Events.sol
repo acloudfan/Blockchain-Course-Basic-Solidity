@@ -28,7 +28,8 @@ contract Events {
     if(now < biddingEnds){
       _;
     } else {
-      throw;
+      /**throw;*  Throw deprecated */
+      revert();
     }
   }
 
@@ -54,7 +55,8 @@ contract Events {
       // Received bid less than high bid emit event
       BidFailed(msg.sender, name, msg.value);
       // throw would return the ethers
-      throw;
+      /**throw;* Deprecated*/ 
+      revert();
     }
   }
 

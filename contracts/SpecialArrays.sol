@@ -25,6 +25,7 @@ contract SpecialArrays {
     return converted;
   }
 
+
   // Retrieves the element at specified index 
   function  getElementAt(uint index) returns(byte){
     // Convert string to bytes
@@ -39,7 +40,7 @@ contract SpecialArrays {
   function  testAssignment(){
     // uint8 need to be explicitly converted to byte type
     fixedByteArray = [byte(1),2,3];
-    fixedByteArray[0] = 5;
+    fixedByteArray[0] = 0x05;
 
     // Assignment NOT allowed as bytes3Array is readonly
     // bytes3Array    = [byte(1),2,3];
@@ -49,14 +50,14 @@ contract SpecialArrays {
     // Create with new
     dynamicByteArray = new byte[](4);
     dynamicByteArray = [byte(1),2,3,4];
-    dynamicByteArray[0] = 1;
+    dynamicByteArray[0] = 0x01;
     dynamicByteArray.length = 5;
 
     // Allocate 4 bytes for the dynamic bytes array
     bytesArray = new bytes(4);
     // Fails to compile
     // bytesArray = [byte(1),2,3,4];
-    bytesArray[3] = 1;
+    bytesArray[3] = 0x01;
     bytesArray.length = 5;
 
     // Memory bytes

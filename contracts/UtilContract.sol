@@ -15,6 +15,7 @@ contract UtilContract {
     for (uint i = 0; i < a.length; i++) bm[k++] = a[i];
     for (i = 0; i < b.length; i++) bm[k++] = b[i];
 
+
     return string(bm);
   }
 }

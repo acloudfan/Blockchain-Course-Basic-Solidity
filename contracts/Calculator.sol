@@ -12,6 +12,7 @@ contract Calculator {
 
   function Calculator() {
     // constructor
+    
   }
 
   // returns the result

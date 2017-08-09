@@ -10,6 +10,7 @@ contract Struct {
 
   }
 
+
   function Struct() {
     // constructor
   }
