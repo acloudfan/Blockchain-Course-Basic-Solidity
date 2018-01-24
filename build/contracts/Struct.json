@@ -1,14 +1,143 @@
 {
-  "contract_name": "Struct",
+  "contractName": "Struct",
   "abi": [
     {
       "inputs": [],
       "payable": false,
-      "type": "constructor"
+      "type": "constructor",
+      "stateMutability": "nonpayable"
     }
   ],
-  "unlinked_binary": "0x60606040523415600e57600080fd5b5b5b5b603680601e6000396000f30060606040525b600080fd00a165627a7a7230582064ba0aa7630fff45fb7011a885b5a778ca2eb270407bbdb05d145c88c8b68e010029",
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a723058209960baea894dbe05a5cd302bcc9e775abda9456692d80fa433c61be90fa971cd0029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a723058209960baea894dbe05a5cd302bcc9e775abda9456692d80fa433c61be90fa971cd0029",
+  "sourceMap": "75:101:20:-;;;129:44;;;;;;;;75:101;;;;;;",
+  "deployedSourceMap": "75:101:20:-;;;;;",
+  "source": "pragma solidity ^0.4.4;\r\n\r\n/**\r\n * Demonstrates the use of struct\r\n **/\r\n\r\ncontract Struct {\r\n\r\n  struct Country {\r\n\r\n  }\r\n\r\n\r\n  function Struct() {\r\n    // constructor\r\n  }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Rajeev\\Documents\\Course\\Blockchain Course\\workspace\\Blockchain-Course-Basic-Solidity\\contracts\\Struct.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/Struct.sol",
+      "exportedSymbols": {
+        "Struct": [
+          1856
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".4"
+          ]
+        },
+        "id": 1850,
+        "name": "PragmaDirective",
+        "src": "0:23:20"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "Demonstrates the use of struct\r*",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1856
+          ],
+          "name": "Struct",
+          "scope": 1857
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "Struct.Country",
+              "members": [
+                null
+              ],
+              "name": "Country",
+              "scope": 1856,
+              "visibility": "public"
+            },
+            "id": 1851,
+            "name": "StructDefinition",
+            "src": "98:23:20"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "Struct",
+              "payable": false,
+              "scope": 1856,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1852,
+                "name": "ParameterList",
+                "src": "144:2:20"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1853,
+                "name": "ParameterList",
+                "src": "147:0:20"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1854,
+                "name": "Block",
+                "src": "147:26:20"
+              }
+            ],
+            "id": 1855,
+            "name": "FunctionDefinition",
+            "src": "129:44:20"
+          }
+        ],
+        "id": 1856,
+        "name": "ContractDefinition",
+        "src": "75:101:20"
+      }
+    ],
+    "id": 1857,
+    "name": "SourceUnit",
+    "src": "0:178:20"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
   "networks": {},
-  "schema_version": "0.0.5",
-  "updated_at": 1502302828880
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2017-11-06T22:12:39.428Z"
 }

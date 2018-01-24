@@ -25,7 +25,7 @@ contract Globals {
   }
 
   // Demonstrates the use of the time units
-  function  timeUnitsTest() returns (uint){
+  function  timeUnitsTest() public returns (uint){
     uint  tim = now;
     return tim;
   }
@@ -34,12 +34,12 @@ contract Globals {
    * Calculates the time in future
    * Takes a number & a unit for the number e.g., 10 minute, 10 Hour
    **/
-  function  calculateFutureTime(uint distance, uint units) returns (uint){
-    if(units == uint(TimeUnit.Minute)){
+  function  calculateFutureTime(uint distance, uint units)  public returns (uint) {
+    if (units == uint(TimeUnit.Minute)){
       return (now + distance*1 minutes);
-    } else if(units == uint(TimeUnit.Hour)){
+    } else if (units == uint(TimeUnit.Hour)) {
       return (now + distance*1 hours);
-    } else if(units == uint(TimeUnit.Day)){
+    } else if (units == uint(TimeUnit.Day)) {
       return (now + distance*1 days);
     }
     return 1;

@@ -1,5 +1,5 @@
 {
-  "contract_name": "String",
+  "contractName": "String",
   "abi": [
     {
       "constant": true,
@@ -12,7 +12,8 @@
         }
       ],
       "payable": false,
-      "type": "function"
+      "type": "function",
+      "stateMutability": "view"
     },
     {
       "constant": true,
@@ -25,16 +26,415 @@
         }
       ],
       "payable": false,
-      "type": "function"
+      "type": "function",
+      "stateMutability": "view"
     },
     {
       "inputs": [],
       "payable": false,
-      "type": "constructor"
+      "type": "constructor",
+      "stateMutability": "nonpayable"
     }
   ],
-  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60408051908101604052601281527f536f6c69646974792069732046554e21212100000000000000000000000000006020820152600190805161005792916020019061011d565b506001805461007a9160009160026000196101008385161502019091160461019c565b5060017f0100000000000000000000000000000000000000000000000000000000000000026001600081546001816001161561010002031660029004811015156100c057fe5b8154600116156100df5790600052602060002090602091828204019190065b601f036101000a81548160ff021916907f0100000000000000000000000000000000000000000000000000000000000000840402179055505b610243565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061015e57805160ff191683800117855561018b565b8280016001018555821561018b579182015b8281111561018b578251825591602001919060010190610170565b5b50610198929150610222565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101d5578054855561018b565b8280016001018555821561018b57600052602060002091601f016020900482015b8281111561018b5782548255916001019190600101906101f6565b5b50610198929150610222565b5090565b61024091905b808211156101985760008155600101610228565b5090565b90565b6102c6806102526000396000f300606060405263ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416635c69f9da8114610048578063c03ee3d3146100d3575b600080fd5b341561005357600080fd5b61005b61015e565b60405160208082528190810183818151815260200191508051906020019080838360005b838110156100985780820151818401525b60200161007f565b50505050905090810190601f1680156100c55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156100de57600080fd5b61005b6101fc565b60405160208082528190810183818151815260200191508051906020019080838360005b838110156100985780820151818401525b60200161007f565b50505050905090810190601f1680156100c55780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101f45780601f106101c9576101008083540402835291602001916101f4565b820191906000526020600020905b8154815290600101906020018083116101d757829003601f168201915b505050505081565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101f45780601f106101c9576101008083540402835291602001916101f4565b820191906000526020600020905b8154815290600101906020018083116101d757829003601f168201915b5050505050815600a165627a7a72305820e55c8ab4047d68169de085919e280478c876f1119844e93dd71e3779e44c971a0029",
+  "bytecode": "0x6060604052341561000f57600080fd5b6040805190810160405280601281526020017f536f6c69646974792069732046554e21212100000000000000000000000000008152506001908051906020019061005a929190610120565b5060016000908054600181600116156101000203166002900461007e9291906101a0565b5060017f0100000000000000000000000000000000000000000000000000000000000000026001600081546001816001161561010002031660029004811015156100c457fe5b8154600116156100e35790600052602060002090602091828204019190065b601f036101000a81548160ff021916907f01000000000000000000000000000000000000000000000000000000000000008404021790555061024c565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061016157805160ff191683800117855561018f565b8280016001018555821561018f579182015b8281111561018e578251825591602001919060010190610173565b5b50905061019c9190610227565b5090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101d95780548555610216565b8280016001018555821561021657600052602060002091601f016020900482015b828111156102155782548255916001019190600101906101fa565b5b5090506102239190610227565b5090565b61024991905b8082111561024557600081600090555060010161022d565b5090565b90565b6102d58061025b6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635c69f9da14610051578063c03ee3d3146100df575b600080fd5b341561005c57600080fd5b61006461016d565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156100ea57600080fd5b6100f261020b565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610132578082015181840152602081019050610117565b50505050905090810190601f16801561015f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102035780601f106101d857610100808354040283529160200191610203565b820191906000526020600020905b8154815290600101906020018083116101e657829003601f168201915b505050505081565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102a15780601f10610276576101008083540402835291602001916102a1565b820191906000526020600020905b81548152906001019060200180831161028457829003601f168201915b5050505050815600a165627a7a723058202b214c594a08decbe5739a664db56dd5fcc4734cb81cb45b078b20050deab5c20029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680635c69f9da14610051578063c03ee3d3146100df575b600080fd5b341561005c57600080fd5b61006461016d565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100a4578082015181840152602081019050610089565b50505050905090810190601f1680156100d15780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34156100ea57600080fd5b6100f261020b565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610132578082015181840152602081019050610117565b50505050905090810190601f16801561015f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102035780601f106101d857610100808354040283529160200191610203565b820191906000526020600020905b8154815290600101906020018083116101e657829003601f168201915b505050505081565b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102a15780601f10610276576101008083540402835291602001916102a1565b820191906000526020600020905b81548152906001019060200180831161028457829003601f168201915b5050505050815600a165627a7a723058202b214c594a08decbe5739a664db56dd5fcc4734cb81cb45b078b20050deab5c20029",
+  "sourceMap": "73:225:19:-;;;148:147;;;;;;;;193:25;;;;;;;;;;;;;;;;;;:4;:25;;;;;;;;;;;;:::i;:::-;;263:4;251;:17;;;;;;;;;;;;;;;;;;;;:::i;:::-;;285:4;277:12;;:4;282:1;277:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:12;;;;;;;;;;;;;;;;;;;;73:225;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "73:225:19:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;121:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;96:20:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;121:20:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;96:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.4;\r\n\r\n/**\r\n * Demonstrates the use of string\r\n **/\r\ncontract String {\r\n\r\n  string  public  some;\r\n  bytes   public  bome;\r\n\r\n  function String() {\r\n    // constructor\r\n    bome=\"Solidity is FUN!!!\";\r\n    // bome=bytes(some);\r\n    some=string(bome);\r\n\r\n    bome[0]=0x01;\r\n  }\r\n}\r\n\r\n    // // Dynamic bytes array to string\r\n    // string  data  = string(bytes_array);\r\n\r\n    // // Fixed length bytes array to string\r\n    // string  data  = string(bytes1_array);\r\n\r\n    // string  data  = string(bytes32_array);\r\n\r\n\r\n    // // String to bytes\r\n    // bytes   data  = bytes(string_data);\r\n\r\n\r\n",
+  "sourcePath": "C:\\Users\\Rajeev\\Documents\\Course\\Blockchain Course\\workspace\\Blockchain-Course-Basic-Solidity\\contracts\\String.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/String.sol",
+      "exportedSymbols": {
+        "String": [
+          1848
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".4"
+          ]
+        },
+        "id": 1823,
+        "name": "PragmaDirective",
+        "src": "0:23:19"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "Demonstrates the use of string\r*",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1848
+          ],
+          "name": "String",
+          "scope": 1849
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "some",
+              "scope": 1848,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string storage ref",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string storage pointer"
+                },
+                "id": 1824,
+                "name": "ElementaryTypeName",
+                "src": "96:6:19"
+              }
+            ],
+            "id": 1825,
+            "name": "VariableDeclaration",
+            "src": "96:20:19"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "bome",
+              "scope": 1848,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes storage ref",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bytes",
+                  "type": "bytes storage pointer"
+                },
+                "id": 1826,
+                "name": "ElementaryTypeName",
+                "src": "121:5:19"
+              }
+            ],
+            "id": 1827,
+            "name": "VariableDeclaration",
+            "src": "121:20:19"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "String",
+              "payable": false,
+              "scope": 1848,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1828,
+                "name": "ParameterList",
+                "src": "163:2:19"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1829,
+                "name": "ParameterList",
+                "src": "166:0:19"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bytes storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1827,
+                              "type": "bytes storage ref",
+                              "value": "bome"
+                            },
+                            "id": 1830,
+                            "name": "Identifier",
+                            "src": "193:4:19"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "536f6c69646974792069732046554e212121",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Solidity is FUN!!!\"",
+                              "value": "Solidity is FUN!!!"
+                            },
+                            "id": 1831,
+                            "name": "Literal",
+                            "src": "198:20:19"
+                          }
+                        ],
+                        "id": 1832,
+                        "name": "Assignment",
+                        "src": "193:25:19"
+                      }
+                    ],
+                    "id": 1833,
+                    "name": "ExpressionStatement",
+                    "src": "193:25:19"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1825,
+                              "type": "string storage ref",
+                              "value": "some"
+                            },
+                            "id": 1834,
+                            "name": "Identifier",
+                            "src": "251:4:19"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "string storage ref",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_bytes_storage",
+                                      "typeString": "bytes storage ref"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(string storage pointer)",
+                                  "value": "string"
+                                },
+                                "id": 1835,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "256:6:19"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1827,
+                                  "type": "bytes storage ref",
+                                  "value": "bome"
+                                },
+                                "id": 1836,
+                                "name": "Identifier",
+                                "src": "263:4:19"
+                              }
+                            ],
+                            "id": 1837,
+                            "name": "FunctionCall",
+                            "src": "256:12:19"
+                          }
+                        ],
+                        "id": 1838,
+                        "name": "Assignment",
+                        "src": "251:17:19"
+                      }
+                    ],
+                    "id": 1839,
+                    "name": "ExpressionStatement",
+                    "src": "251:17:19"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bytes1"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "bytes1"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1827,
+                                  "type": "bytes storage ref",
+                                  "value": "bome"
+                                },
+                                "id": 1840,
+                                "name": "Identifier",
+                                "src": "277:4:19"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "hexvalue": "30",
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "subdenomination": null,
+                                  "token": "number",
+                                  "type": "int_const 0",
+                                  "value": "0"
+                                },
+                                "id": 1841,
+                                "name": "Literal",
+                                "src": "282:1:19"
+                              }
+                            ],
+                            "id": 1842,
+                            "name": "IndexAccess",
+                            "src": "277:7:19"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30783031",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 1",
+                              "value": "0x01"
+                            },
+                            "id": 1843,
+                            "name": "Literal",
+                            "src": "285:4:19"
+                          }
+                        ],
+                        "id": 1844,
+                        "name": "Assignment",
+                        "src": "277:12:19"
+                      }
+                    ],
+                    "id": 1845,
+                    "name": "ExpressionStatement",
+                    "src": "277:12:19"
+                  }
+                ],
+                "id": 1846,
+                "name": "Block",
+                "src": "166:129:19"
+              }
+            ],
+            "id": 1847,
+            "name": "FunctionDefinition",
+            "src": "148:147:19"
+          }
+        ],
+        "id": 1848,
+        "name": "ContractDefinition",
+        "src": "73:225:19"
+      }
+    ],
+    "id": 1849,
+    "name": "SourceUnit",
+    "src": "0:610:19"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
   "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x9fbda871d559710256a2502a2517b794b482db40"
+    },
     "1488647501184": {
       "events": {},
       "links": {},
@@ -72,6 +472,6 @@
       "updated_at": 1491476112035
     }
   },
-  "schema_version": "0.0.5",
-  "updated_at": 1502302817485
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-22T19:34:44.835Z"
 }
