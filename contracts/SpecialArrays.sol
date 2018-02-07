@@ -18,7 +18,7 @@ contract SpecialArrays {
   // String variable
   string    stringStorage = "abcde";
 
-  // Converts the string to byte and sends the length of the string
+  // Converts the bytes to string
   function  conversionTest() returns(string) {
     bytes   memory helloSolidity = "Hello Solidity!!!";
     string  memory converted = string(helloSolidity);
