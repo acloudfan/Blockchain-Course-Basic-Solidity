@@ -4,8 +4,12 @@ pragma solidity ^0.4.4;
  * THIS CODE WILL THROW Compilation Errors
  * Code for demonstrating the use of keyword memory and storage
  * 
- * PLEASE IGNORE THE Warning "Unused local variable" As this is demo code ... In real code you would address the warnings
- * Aug 8, 2017
+ * PLEASE IGNORE THE Warnings:
+ *     "Unused local variable" As this is demo code we are not using the variables
+ *     "Function state mutability ...." .... You will learn the use of view keyword :)
+ * In real code you would address the warnings
+ * 
+ * Keyword "public" added to functions to suppress warnings - March 2018
  **/
 
 
@@ -20,13 +24,10 @@ contract DataLocation {
   //uint memory amount;
   //uint[] memory some;
 
-  function  defaultAction(uint[] args) returns (uint[] dat) {
-    //...code..
-    
-  }
-  function  forcedAction(uint[] storage args) internal returns(uint[] storage dat) {
-    //...code...
-  }
+  function defaultAction(uint[] args) public returns (uint[] dat) {}
+
+
+  function  forcedAction(uint[] storage args) internal returns(uint[] storage dat) {}
 
   function testFunction(){
     // This will give error
@@ -44,7 +45,7 @@ contract DataLocation {
     // This is fine
     defaultAction(memoryArray);
 
-    // Creates a refernce
+    // Creates a reference to a storage element
     uint[] storage  pointer = allPoints;
     // This is fine caz pointer is a reference to storage array
     forcedAction(pointer);
@@ -53,8 +54,9 @@ contract DataLocation {
  
   }
 
-  function DataLocation() {
-    // constructor
+  // constructor
+  function DataLocation() public {
+    /** Does nothing in demo code**/
   }
 
 }

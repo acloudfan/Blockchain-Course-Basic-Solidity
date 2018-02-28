@@ -7,7 +7,7 @@ contract BasicDataTypes {
   address owner;      // Address of the owner
   uint    ownerInitialBalance;
 
-  function BasicDataTypes(address addr) {
+  function BasicDataTypes(address addr) public {
 
 
     owner = addr;
@@ -24,7 +24,7 @@ contract BasicDataTypes {
     bool  flag = true;  // Un initialized boolean is set to False
 
     // if(1){ } will not compile
-    if(1 > 0) {}         // This will work because expression evaluates to bool
+    if (1 > 0) {}         // This will work because expression evaluates to bool
 
     var deduced = x8;    // Compiler automagically assigns the type uin8 to variable deduced;
     // deduced = x256;   // This will fail to compile because deduced is set to type uin8
@@ -32,7 +32,7 @@ contract BasicDataTypes {
     uint balance = owner.balance;
 
     // Ignore this line - This is just make compile happy - suppress unused local var warnings - Aug 8, 2017
-    if((balance+deduced) == 0 || flag ){}
+    if ((balance+deduced) == 0 || flag ) { }
   }
 
 }

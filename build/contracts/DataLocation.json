@@ -2,6 +2,12 @@
   "contractName": "DataLocation",
   "abi": [
     {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
       "constant": false,
       "inputs": [
         {
@@ -17,8 +23,8 @@
         }
       ],
       "payable": false,
-      "type": "function",
-      "stateMutability": "nonpayable"
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
     {
       "constant": false,
@@ -26,830 +32,1419 @@
       "name": "testFunction",
       "outputs": [],
       "payable": false,
-      "type": "function",
-      "stateMutability": "nonpayable"
-    },
-    {
-      "inputs": [],
-      "payable": false,
-      "type": "constructor",
-      "stateMutability": "nonpayable"
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
   ],
-  "bytecode": "0x6060604052341561000f57600080fd5b6101ee8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a2c716d314610051578063e16b4a9b14610100575b600080fd5b341561005c57600080fd5b6100a9600480803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091905050610115565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100ec5780820151818401526020810190506100d1565b505050509050019250505060405180910390f35b341561010b57600080fd5b610113610122565b005b61011d6101ae565b919050565b61012a6101ae565b6000806001915061013a83610115565b5060009050610148816101a7565b506101a18180548060200260200160405190810160405280929190818152602001828054801561019757602002820191906000526020600020905b815481526020019060010190808311610183575b5050505050610115565b50505050565b6000919050565b6020604051908101604052806000815250905600a165627a7a72305820b423894909856c276d684ac01d11eeba78d39d861c57c65b63890c2edeb4fae10029",
-  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a2c716d314610051578063e16b4a9b14610100575b600080fd5b341561005c57600080fd5b6100a9600480803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091905050610115565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100ec5780820151818401526020810190506100d1565b505050509050019250505060405180910390f35b341561010b57600080fd5b610113610122565b005b61011d6101ae565b919050565b61012a6101ae565b6000806001915061013a83610115565b5060009050610148816101a7565b506101a18180548060200260200160405190810160405280929190818152602001828054801561019757602002820191906000526020600020905b815481526020019060010190808311610183575b5050505050610115565b50505050565b6000919050565b6020604051908101604052806000815250905600a165627a7a72305820b423894909856c276d684ac01d11eeba78d39d861c57c65b63890c2edeb4fae10029",
-  "sourceMap": "295:1205:7:-;;;1445:50;;;;;;;;295:1205;;;;;;",
-  "deployedSourceMap": "295:1205:7:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;526:87;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;728:711:7;;;;;;;;;;;;;;526:87;572:10;;:::i;:::-;526:87;;;:::o;728:711::-;817:28;;:::i;:::-;1031:24;1248:23;1058:4;1031:31;;1186:26;1200:11;1186:13;:26::i;:::-;;1274:9;1248:35;;1355:21;1368:7;1355:12;:21::i;:::-;;1408:22;1422:7;1408:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:13;:22::i;:::-;;728:711;;;:::o;617:105::-;678:18;617:105;;;:::o;295:1205::-;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.4;\r\n\r\n/**\r\n * THIS CODE WILL THROW Compilation Errors\r\n * Code for demonstrating the use of keyword memory and storage\r\n * \r\n * PLEASE IGNORE THE Warning \"Unused local variable\" As this is demo code ... In real code you would address the warnings\r\n * Aug 8, 2017\r\n **/\r\n\r\n\r\ncontract DataLocation {\r\n\r\n  // Always in storage\r\n  uint[]  allPoints;\r\n\r\n  string  name;\r\n\r\n  // These would give compilation error as here you can declare only storage vars\r\n  //uint memory amount;\r\n  //uint[] memory some;\r\n\r\n  function  defaultAction(uint[] args) returns (uint[] dat) {\r\n    //...code..\r\n    \r\n  }\r\n  function  forcedAction(uint[] storage args) internal returns(uint[] storage dat) {\r\n    //...code...\r\n  }\r\n\r\n  function testFunction(){\r\n    // This will give error\r\n    // uint[]  localArray;\r\n\r\n    uint[]  memory   memoryArray;\r\n    // By default value types are created in memory\r\n    // But you may declare them as reference to storage\r\n    // Changes to loalName will be reflected in the storage va name\r\n    string storage localName = name;\r\n\r\n    // This will give error - requires array in storage\r\n    // forcedAction(memoryArray);\r\n\r\n    // This is fine\r\n    defaultAction(memoryArray);\r\n\r\n    // Creates a refernce\r\n    uint[] storage  pointer = allPoints;\r\n    // This is fine caz pointer is a reference to storage array\r\n    forcedAction(pointer);\r\n    // This is fine too\r\n    defaultAction(pointer);\r\n \r\n  }\r\n\r\n  function DataLocation() {\r\n    // constructor\r\n  }\r\n\r\n}\r\n",
+  "bytecode": "0x6060604052341561000f57600080fd5b6101ee8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a2c716d314610051578063e16b4a9b14610100575b600080fd5b341561005c57600080fd5b6100a9600480803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091905050610115565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100ec5780820151818401526020810190506100d1565b505050509050019250505060405180910390f35b341561010b57600080fd5b610113610122565b005b61011d6101ae565b919050565b61012a6101ae565b6000806001915061013a83610115565b5060009050610148816101a7565b506101a18180548060200260200160405190810160405280929190818152602001828054801561019757602002820191906000526020600020905b815481526020019060010190808311610183575b5050505050610115565b50505050565b6000919050565b6020604051908101604052806000815250905600a165627a7a72305820990c6b38c532b6c1219d5e6660e1109d86ccdfffb14d51e17383dc03060dfd290029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a2c716d314610051578063e16b4a9b14610100575b600080fd5b341561005c57600080fd5b6100a9600480803590602001908201803590602001908080602002602001604051908101604052809392919081815260200183836020028082843782019150505050505091905050610115565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156100ec5780820151818401526020810190506100d1565b505050509050019250505060405180910390f35b341561010b57600080fd5b610113610122565b005b61011d6101ae565b919050565b61012a6101ae565b6000806001915061013a83610115565b5060009050610148816101a7565b506101a18180548060200260200160405190810160405280929190818152602001828054801561019757602002820191906000526020600020905b815481526020019060010190808311610183575b5050505050610115565b50505050565b6000919050565b6020604051908101604052806000815250905600a165627a7a72305820990c6b38c532b6c1219d5e6660e1109d86ccdfffb14d51e17383dc03060dfd290029",
+  "sourceMap": "487:1231:1:-;;;1638:75;;;;;;;;487:1231;;;;;;",
+  "deployedSourceMap": "487:1231:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;718:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;881:733:1;;;;;;;;;;;;;;718:66;770:10;;:::i;:::-;718:66;;;:::o;881:733::-;970:28;;:::i;:::-;1184:24;1423:23;1211:4;1184:31;;1339:26;1353:11;1339:13;:26::i;:::-;;1449:9;1423:35;;1530:21;1543:7;1530:12;:21::i;:::-;;1583:22;1597:7;1583:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:13;:22::i;:::-;;881:733;;;:::o;792:83::-;853:18;792:83;;;:::o;487:1231::-;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.4;\r\n\r\n/**\r\n * THIS CODE WILL THROW Compilation Errors\r\n * Code for demonstrating the use of keyword memory and storage\r\n * \r\n * PLEASE IGNORE THE Warnings:\r\n *     \"Unused local variable\" As this is demo code we are not using the variables\r\n *     \"Function state mutability ....\" .... You will learn the use of view keyword :)\r\n * In real code you would address the warnings\r\n * \r\n * Keyword \"public\" added to functions to suppress warnings - March 2018\r\n **/\r\n\r\n\r\ncontract DataLocation {\r\n\r\n  // Always in storage\r\n  uint[]  allPoints;\r\n\r\n  string  name;\r\n\r\n  // These would give compilation error as here you can declare only storage vars\r\n  //uint memory amount;\r\n  //uint[] memory some;\r\n\r\n  function defaultAction(uint[] args) public returns (uint[] dat) {}\r\n\r\n\r\n  function  forcedAction(uint[] storage args) internal returns(uint[] storage dat) {}\r\n\r\n  function testFunction(){\r\n    // This will give error\r\n    // uint[]  localArray;\r\n\r\n    uint[]  memory   memoryArray;\r\n    // By default value types are created in memory\r\n    // But you may declare them as reference to storage\r\n    // Changes to loalName will be reflected in the storage va name\r\n    string storage localName = name;\r\n\r\n    // This will give error - requires array in storage\r\n    // forcedAction(memoryArray);\r\n\r\n    // This is fine\r\n    defaultAction(memoryArray);\r\n\r\n    // Creates a reference to a storage element\r\n    uint[] storage  pointer = allPoints;\r\n    // This is fine caz pointer is a reference to storage array\r\n    forcedAction(pointer);\r\n    // This is fine too\r\n    defaultAction(pointer);\r\n \r\n  }\r\n\r\n  // constructor\r\n  function DataLocation() public {\r\n    /** Does nothing in demo code**/\r\n  }\r\n\r\n}\r\n",
   "sourcePath": "C:\\Users\\Rajeev\\Documents\\Course\\Blockchain Course\\workspace\\Blockchain-Course-Basic-Solidity\\contracts\\DataLocation.sol",
   "ast": {
-    "attributes": {
-      "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/DataLocation.sol",
-      "exportedSymbols": {
-        "DataLocation": [
-          517
-        ]
-      }
+    "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/DataLocation.sol",
+    "exportedSymbols": {
+      "DataLocation": [
+        150
+      ]
     },
-    "children": [
+    "id": 151,
+    "nodeType": "SourceUnit",
+    "nodes": [
       {
-        "attributes": {
-          "literals": [
-            "solidity",
-            "^",
-            "0.4",
-            ".4"
-          ]
-        },
-        "id": 456,
-        "name": "PragmaDirective",
-        "src": "0:23:7"
+        "id": 89,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
       },
       {
-        "attributes": {
-          "baseContracts": [
-            null
-          ],
-          "contractDependencies": [
-            null
-          ],
-          "contractKind": "contract",
-          "documentation": "THIS CODE WILL THROW Compilation Errors\r\nCode for demonstrating the use of keyword memory and storage\r\n\r\nPLEASE IGNORE THE Warning \"Unused local variable\" As this is demo code ... In real code you would address the warnings\r\nAug 8, 2017\r*",
-          "fullyImplemented": true,
-          "linearizedBaseContracts": [
-            517
-          ],
-          "name": "DataLocation",
-          "scope": 518
-        },
-        "children": [
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "THIS CODE WILL THROW Compilation Errors\r\nCode for demonstrating the use of keyword memory and storage\r\n\r\nPLEASE IGNORE THE Warnings:\r\n    \"Unused local variable\" As this is demo code we are not using the variables\r\n    \"Function state mutability ....\" .... You will learn the use of view keyword :)\r\nIn real code you would address the warnings\r\n\r\nKeyword \"public\" added to functions to suppress warnings - March 2018\r*",
+        "fullyImplemented": true,
+        "id": 150,
+        "linearizedBaseContracts": [
+          150
+        ],
+        "name": "DataLocation",
+        "nodeType": "ContractDefinition",
+        "nodes": [
           {
-            "attributes": {
-              "constant": false,
-              "name": "allPoints",
-              "scope": 517,
-              "stateVariable": true,
-              "storageLocation": "default",
-              "type": "uint256[] storage ref",
-              "value": null,
-              "visibility": "internal"
+            "constant": false,
+            "id": 92,
+            "name": "allPoints",
+            "nodeType": "VariableDeclaration",
+            "scope": 150,
+            "src": "540:17:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+              "typeString": "uint256[] storage ref"
             },
-            "children": [
-              {
-                "attributes": {
-                  "length": null,
-                  "type": "uint256[] storage pointer"
-                },
-                "children": [
-                  {
-                    "attributes": {
+            "typeName": {
+              "baseType": {
+                "id": 90,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "540:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 91,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "540:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                "typeString": "uint256[] storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 94,
+            "name": "name",
+            "nodeType": "VariableDeclaration",
+            "scope": 150,
+            "src": "564:12:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string storage ref"
+            },
+            "typeName": {
+              "id": 93,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "564:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 103,
+              "nodeType": "Block",
+              "src": "782:2:1",
+              "statements": []
+            },
+            "id": 104,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "defaultAction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 98,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 97,
+                  "name": "args",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 104,
+                  "src": "741:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[] memory"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 95,
                       "name": "uint",
-                      "type": "uint256"
+                      "nodeType": "ElementaryTypeName",
+                      "src": "741:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "id": 457,
-                    "name": "ElementaryTypeName",
-                    "src": "348:4:7"
-                  }
-                ],
-                "id": 458,
-                "name": "ArrayTypeName",
-                "src": "348:6:7"
-              }
-            ],
-            "id": 459,
-            "name": "VariableDeclaration",
-            "src": "348:17:7"
-          },
-          {
-            "attributes": {
-              "constant": false,
-              "name": "name",
-              "scope": 517,
-              "stateVariable": true,
-              "storageLocation": "default",
-              "type": "string storage ref",
-              "value": null,
-              "visibility": "internal"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "name": "string",
-                  "type": "string storage pointer"
-                },
-                "id": 460,
-                "name": "ElementaryTypeName",
-                "src": "372:6:7"
-              }
-            ],
-            "id": 461,
-            "name": "VariableDeclaration",
-            "src": "372:12:7"
-          },
-          {
-            "attributes": {
-              "constant": false,
-              "implemented": true,
-              "isConstructor": false,
-              "modifiers": [
-                null
+                    "id": 96,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "741:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
               ],
-              "name": "defaultAction",
-              "payable": false,
-              "scope": 517,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "public"
+              "src": "740:13:1"
             },
-            "children": [
-              {
-                "children": [
-                  {
-                    "attributes": {
+            "payable": false,
+            "returnParameters": {
+              "id": 102,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 101,
+                  "name": "dat",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 104,
+                  "src": "770:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[] memory"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 99,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "770:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 100,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "770:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "769:12:1"
+            },
+            "scope": 150,
+            "src": "718:66:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 113,
+              "nodeType": "Block",
+              "src": "873:2:1",
+              "statements": []
+            },
+            "id": 114,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "forcedAction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 107,
+                  "name": "args",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "815:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[] storage pointer"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 105,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "815:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 106,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "815:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "814:21:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 112,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 111,
+                  "name": "dat",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "853:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[] storage pointer"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 109,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "853:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 110,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "853:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "852:20:1"
+            },
+            "scope": 150,
+            "src": "792:83:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 144,
+              "nodeType": "Block",
+              "src": "904:710:1",
+              "statements": [
+                {
+                  "assignments": [],
+                  "declarations": [
+                    {
                       "constant": false,
-                      "name": "args",
-                      "scope": 471,
+                      "id": 120,
+                      "name": "memoryArray",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 145,
+                      "src": "970:28:1",
                       "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256[] memory",
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                        "typeString": "uint256[] memory"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 118,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "970:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 119,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "970:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
+                      },
                       "value": null,
                       "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "length": null,
-                          "type": "uint256[] storage pointer"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "name": "uint",
-                              "type": "uint256"
-                            },
-                            "id": 462,
-                            "name": "ElementaryTypeName",
-                            "src": "550:4:7"
-                          }
-                        ],
-                        "id": 463,
-                        "name": "ArrayTypeName",
-                        "src": "550:6:7"
-                      }
-                    ],
-                    "id": 464,
-                    "name": "VariableDeclaration",
-                    "src": "550:11:7"
-                  }
-                ],
-                "id": 465,
-                "name": "ParameterList",
-                "src": "549:13:7"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "dat",
-                      "scope": 471,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256[] memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "length": null,
-                          "type": "uint256[] storage pointer"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "name": "uint",
-                              "type": "uint256"
-                            },
-                            "id": 466,
-                            "name": "ElementaryTypeName",
-                            "src": "572:4:7"
-                          }
-                        ],
-                        "id": 467,
-                        "name": "ArrayTypeName",
-                        "src": "572:6:7"
-                      }
-                    ],
-                    "id": 468,
-                    "name": "VariableDeclaration",
-                    "src": "572:10:7"
-                  }
-                ],
-                "id": 469,
-                "name": "ParameterList",
-                "src": "571:12:7"
-              },
-              {
-                "attributes": {
-                  "statements": [
-                    null
-                  ]
+                    }
+                  ],
+                  "id": 121,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "970:28:1"
                 },
-                "children": [],
-                "id": 470,
-                "name": "Block",
-                "src": "584:29:7"
-              }
-            ],
-            "id": 471,
-            "name": "FunctionDefinition",
-            "src": "526:87:7"
-          },
-          {
-            "attributes": {
-              "constant": false,
-              "implemented": true,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
-              "name": "forcedAction",
-              "payable": false,
-              "scope": 517,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "internal"
-            },
-            "children": [
-              {
-                "children": [
-                  {
-                    "attributes": {
+                {
+                  "assignments": [
+                    123
+                  ],
+                  "declarations": [
+                    {
                       "constant": false,
-                      "name": "args",
-                      "scope": 481,
+                      "id": 123,
+                      "name": "localName",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 145,
+                      "src": "1184:24:1",
                       "stateVariable": false,
                       "storageLocation": "storage",
-                      "type": "uint256[] storage pointer",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string storage pointer"
+                      },
+                      "typeName": {
+                        "id": 122,
+                        "name": "string",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1184:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage_ptr",
+                          "typeString": "string storage pointer"
+                        }
+                      },
                       "value": null,
                       "visibility": "internal"
-                    },
-                    "children": [
+                    }
+                  ],
+                  "id": 125,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 124,
+                    "name": "name",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 94,
+                    "src": "1211:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1184:31:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
                       {
-                        "attributes": {
-                          "length": null,
-                          "type": "uint256[] storage pointer"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "name": "uint",
-                              "type": "uint256"
-                            },
-                            "id": 472,
-                            "name": "ElementaryTypeName",
-                            "src": "640:4:7"
-                          }
-                        ],
-                        "id": 473,
-                        "name": "ArrayTypeName",
-                        "src": "640:6:7"
+                        "argumentTypes": null,
+                        "id": 127,
+                        "name": "memoryArray",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 120,
+                        "src": "1353:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
                       }
                     ],
-                    "id": 474,
-                    "name": "VariableDeclaration",
-                    "src": "640:19:7"
-                  }
-                ],
-                "id": 475,
-                "name": "ParameterList",
-                "src": "639:21:7"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "dat",
-                      "scope": 481,
-                      "stateVariable": false,
-                      "storageLocation": "storage",
-                      "type": "uint256[] storage pointer",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "length": null,
-                          "type": "uint256[] storage pointer"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "name": "uint",
-                              "type": "uint256"
-                            },
-                            "id": 476,
-                            "name": "ElementaryTypeName",
-                            "src": "678:4:7"
-                          }
-                        ],
-                        "id": 477,
-                        "name": "ArrayTypeName",
-                        "src": "678:6:7"
-                      }
-                    ],
-                    "id": 478,
-                    "name": "VariableDeclaration",
-                    "src": "678:18:7"
-                  }
-                ],
-                "id": 479,
-                "name": "ParameterList",
-                "src": "677:20:7"
-              },
-              {
-                "attributes": {
-                  "statements": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 480,
-                "name": "Block",
-                "src": "698:24:7"
-              }
-            ],
-            "id": 481,
-            "name": "FunctionDefinition",
-            "src": "617:105:7"
-          },
-          {
-            "attributes": {
-              "constant": false,
-              "implemented": true,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
-              "name": "testFunction",
-              "payable": false,
-              "scope": 517,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 482,
-                "name": "ParameterList",
-                "src": "749:2:7"
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 483,
-                "name": "ParameterList",
-                "src": "751:0:7"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "assignments": [
-                        null
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
                       ],
-                      "initialValue": null
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "constant": false,
-                          "name": "memoryArray",
-                          "scope": 512,
-                          "stateVariable": false,
-                          "storageLocation": "memory",
-                          "type": "uint256[] memory",
-                          "value": null,
-                          "visibility": "internal"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "length": null,
-                              "type": "uint256[] storage pointer"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "name": "uint",
-                                  "type": "uint256"
-                                },
-                                "id": 485,
-                                "name": "ElementaryTypeName",
-                                "src": "817:4:7"
-                              }
-                            ],
-                            "id": 486,
-                            "name": "ArrayTypeName",
-                            "src": "817:6:7"
-                          }
-                        ],
-                        "id": 487,
-                        "name": "VariableDeclaration",
-                        "src": "817:28:7"
+                      "id": 126,
+                      "name": "defaultAction",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 104,
+                      "src": "1339:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_uint256_$dyn_memory_ptr_$returns$_t_array$_t_uint256_$dyn_memory_ptr_$",
+                        "typeString": "function (uint256[] memory) returns (uint256[] memory)"
                       }
-                    ],
-                    "id": 488,
-                    "name": "VariableDeclarationStatement",
-                    "src": "817:28:7"
-                  },
-                  {
-                    "attributes": {
-                      "assignments": [
-                        490
-                      ]
                     },
-                    "children": [
-                      {
-                        "attributes": {
-                          "constant": false,
-                          "name": "localName",
-                          "scope": 512,
-                          "stateVariable": false,
-                          "storageLocation": "storage",
-                          "type": "string storage pointer",
-                          "value": null,
-                          "visibility": "internal"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "name": "string",
-                              "type": "string storage pointer"
-                            },
-                            "id": 489,
-                            "name": "ElementaryTypeName",
-                            "src": "1031:6:7"
-                          }
-                        ],
-                        "id": 490,
-                        "name": "VariableDeclaration",
-                        "src": "1031:24:7"
+                    "id": 128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1339:26:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                      "typeString": "uint256[] memory"
+                    }
+                  },
+                  "id": 129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1339:26:1"
+                },
+                {
+                  "assignments": [
+                    133
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 133,
+                      "name": "pointer",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 145,
+                      "src": "1423:23:1",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                        "typeString": "uint256[] storage pointer"
                       },
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 461,
-                          "type": "string storage ref",
-                          "value": "name"
-                        },
-                        "id": 491,
-                        "name": "Identifier",
-                        "src": "1058:4:7"
-                      }
-                    ],
-                    "id": 492,
-                    "name": "VariableDeclarationStatement",
-                    "src": "1031:31:7"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "uint256[] memory",
-                          "type_conversion": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
-                                  "typeString": "uint256[] memory"
-                                }
-                              ],
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 471,
-                              "type": "function (uint256[] memory) returns (uint256[] memory)",
-                              "value": "defaultAction"
-                            },
-                            "id": 493,
-                            "name": "Identifier",
-                            "src": "1186:13:7"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 487,
-                              "type": "uint256[] memory",
-                              "value": "memoryArray"
-                            },
-                            "id": 494,
-                            "name": "Identifier",
-                            "src": "1200:11:7"
+                      "typeName": {
+                        "baseType": {
+                          "id": 131,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1423:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
                           }
-                        ],
-                        "id": 495,
-                        "name": "FunctionCall",
-                        "src": "1186:26:7"
-                      }
-                    ],
-                    "id": 496,
-                    "name": "ExpressionStatement",
-                    "src": "1186:26:7"
-                  },
-                  {
-                    "attributes": {
-                      "assignments": [
-                        500
-                      ]
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "constant": false,
-                          "name": "pointer",
-                          "scope": 512,
-                          "stateVariable": false,
-                          "storageLocation": "storage",
-                          "type": "uint256[] storage pointer",
-                          "value": null,
-                          "visibility": "internal"
                         },
-                        "children": [
-                          {
-                            "attributes": {
-                              "length": null,
-                              "type": "uint256[] storage pointer"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "name": "uint",
-                                  "type": "uint256"
-                                },
-                                "id": 498,
-                                "name": "ElementaryTypeName",
-                                "src": "1248:4:7"
-                              }
-                            ],
-                            "id": 499,
-                            "name": "ArrayTypeName",
-                            "src": "1248:6:7"
-                          }
-                        ],
-                        "id": 500,
-                        "name": "VariableDeclaration",
-                        "src": "1248:23:7"
+                        "id": 132,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "1423:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
                       },
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 459,
-                          "type": "uint256[] storage ref",
-                          "value": "allPoints"
-                        },
-                        "id": 501,
-                        "name": "Identifier",
-                        "src": "1274:9:7"
-                      }
-                    ],
-                    "id": 502,
-                    "name": "VariableDeclarationStatement",
-                    "src": "1248:35:7"
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 135,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 134,
+                    "name": "allPoints",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 92,
+                    "src": "1449:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                      "typeString": "uint256[] storage ref"
+                    }
                   },
-                  {
-                    "children": [
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1423:35:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
                       {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "uint256[] storage pointer",
-                          "type_conversion": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                                  "typeString": "uint256[] storage pointer"
-                                }
-                              ],
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 481,
-                              "type": "function (uint256[] storage pointer) returns (uint256[] storage pointer)",
-                              "value": "forcedAction"
-                            },
-                            "id": 503,
-                            "name": "Identifier",
-                            "src": "1355:12:7"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 500,
-                              "type": "uint256[] storage pointer",
-                              "value": "pointer"
-                            },
-                            "id": 504,
-                            "name": "Identifier",
-                            "src": "1368:7:7"
-                          }
-                        ],
-                        "id": 505,
-                        "name": "FunctionCall",
-                        "src": "1355:21:7"
+                        "argumentTypes": null,
+                        "id": 137,
+                        "name": "pointer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 133,
+                        "src": "1543:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
                       }
                     ],
-                    "id": 506,
-                    "name": "ExpressionStatement",
-                    "src": "1355:21:7"
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
+                      ],
+                      "id": 136,
+                      "name": "forcedAction",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "1530:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_uint256_$dyn_storage_ptr_$returns$_t_array$_t_uint256_$dyn_storage_ptr_$",
+                        "typeString": "function (uint256[] storage pointer) returns (uint256[] storage pointer)"
+                      }
+                    },
+                    "id": 138,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1530:21:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
                   },
-                  {
-                    "children": [
+                  "id": 139,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1530:21:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
                       {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "uint256[] memory",
-                          "type_conversion": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                                  "typeString": "uint256[] storage pointer"
-                                }
-                              ],
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 471,
-                              "type": "function (uint256[] memory) returns (uint256[] memory)",
-                              "value": "defaultAction"
-                            },
-                            "id": 507,
-                            "name": "Identifier",
-                            "src": "1408:13:7"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 500,
-                              "type": "uint256[] storage pointer",
-                              "value": "pointer"
-                            },
-                            "id": 508,
-                            "name": "Identifier",
-                            "src": "1422:7:7"
-                          }
-                        ],
-                        "id": 509,
-                        "name": "FunctionCall",
-                        "src": "1408:22:7"
+                        "argumentTypes": null,
+                        "id": 141,
+                        "name": "pointer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 133,
+                        "src": "1597:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
                       }
                     ],
-                    "id": 510,
-                    "name": "ExpressionStatement",
-                    "src": "1408:22:7"
-                  }
-                ],
-                "id": 511,
-                "name": "Block",
-                "src": "751:688:7"
-              }
-            ],
-            "id": 512,
-            "name": "FunctionDefinition",
-            "src": "728:711:7"
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
+                      ],
+                      "id": 140,
+                      "name": "defaultAction",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 104,
+                      "src": "1583:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_uint256_$dyn_memory_ptr_$returns$_t_array$_t_uint256_$dyn_memory_ptr_$",
+                        "typeString": "function (uint256[] memory) returns (uint256[] memory)"
+                      }
+                    },
+                    "id": 142,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1583:22:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                      "typeString": "uint256[] memory"
+                    }
+                  },
+                  "id": 143,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1583:22:1"
+                }
+              ]
+            },
+            "id": 145,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "testFunction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 115,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "902:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 116,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "904:0:1"
+            },
+            "scope": 150,
+            "src": "881:733:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           },
           {
-            "attributes": {
-              "constant": false,
-              "implemented": true,
-              "isConstructor": true,
-              "modifiers": [
-                null
-              ],
-              "name": "DataLocation",
-              "payable": false,
-              "scope": 517,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "public"
+            "body": {
+              "id": 148,
+              "nodeType": "Block",
+              "src": "1669:44:1",
+              "statements": []
             },
-            "children": [
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 513,
-                "name": "ParameterList",
-                "src": "1466:2:7"
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 514,
-                "name": "ParameterList",
-                "src": "1469:0:7"
-              },
-              {
-                "attributes": {
-                  "statements": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 515,
-                "name": "Block",
-                "src": "1469:26:7"
-              }
-            ],
-            "id": 516,
-            "name": "FunctionDefinition",
-            "src": "1445:50:7"
+            "id": 149,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "DataLocation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 146,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1659:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 147,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1669:0:1"
+            },
+            "scope": 150,
+            "src": "1638:75:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "id": 517,
-        "name": "ContractDefinition",
-        "src": "295:1205:7"
+        "scope": 151,
+        "src": "487:1231:1"
       }
     ],
-    "id": 518,
-    "name": "SourceUnit",
-    "src": "0:1502:7"
+    "src": "0:1720:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/DataLocation.sol",
+    "exportedSymbols": {
+      "DataLocation": [
+        150
+      ]
+    },
+    "id": 151,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 89,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".4"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "THIS CODE WILL THROW Compilation Errors\r\nCode for demonstrating the use of keyword memory and storage\r\n\r\nPLEASE IGNORE THE Warnings:\r\n    \"Unused local variable\" As this is demo code we are not using the variables\r\n    \"Function state mutability ....\" .... You will learn the use of view keyword :)\r\nIn real code you would address the warnings\r\n\r\nKeyword \"public\" added to functions to suppress warnings - March 2018\r*",
+        "fullyImplemented": true,
+        "id": 150,
+        "linearizedBaseContracts": [
+          150
+        ],
+        "name": "DataLocation",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 92,
+            "name": "allPoints",
+            "nodeType": "VariableDeclaration",
+            "scope": 150,
+            "src": "540:17:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+              "typeString": "uint256[] storage ref"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 90,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "540:4:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 91,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "540:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                "typeString": "uint256[] storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 94,
+            "name": "name",
+            "nodeType": "VariableDeclaration",
+            "scope": 150,
+            "src": "564:12:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string storage ref"
+            },
+            "typeName": {
+              "id": 93,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "564:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 103,
+              "nodeType": "Block",
+              "src": "782:2:1",
+              "statements": []
+            },
+            "id": 104,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "defaultAction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 98,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 97,
+                  "name": "args",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 104,
+                  "src": "741:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[] memory"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 95,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "741:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 96,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "741:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "740:13:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 102,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 101,
+                  "name": "dat",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 104,
+                  "src": "770:10:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[] memory"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 99,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "770:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 100,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "770:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "769:12:1"
+            },
+            "scope": 150,
+            "src": "718:66:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 113,
+              "nodeType": "Block",
+              "src": "873:2:1",
+              "statements": []
+            },
+            "id": 114,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "forcedAction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 107,
+                  "name": "args",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "815:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[] storage pointer"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 105,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "815:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 106,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "815:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "814:21:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 112,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 111,
+                  "name": "dat",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "853:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                    "typeString": "uint256[] storage pointer"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 109,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "853:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 110,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "853:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "852:20:1"
+            },
+            "scope": 150,
+            "src": "792:83:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 144,
+              "nodeType": "Block",
+              "src": "904:710:1",
+              "statements": [
+                {
+                  "assignments": [],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 120,
+                      "name": "memoryArray",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 145,
+                      "src": "970:28:1",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                        "typeString": "uint256[] memory"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 118,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "970:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 119,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "970:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 121,
+                  "initialValue": null,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "970:28:1"
+                },
+                {
+                  "assignments": [
+                    123
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 123,
+                      "name": "localName",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 145,
+                      "src": "1184:24:1",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string storage pointer"
+                      },
+                      "typeName": {
+                        "id": 122,
+                        "name": "string",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1184:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage_ptr",
+                          "typeString": "string storage pointer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 125,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 124,
+                    "name": "name",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 94,
+                    "src": "1211:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1184:31:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 127,
+                        "name": "memoryArray",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 120,
+                        "src": "1353:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                          "typeString": "uint256[] memory"
+                        }
+                      ],
+                      "id": 126,
+                      "name": "defaultAction",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 104,
+                      "src": "1339:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_uint256_$dyn_memory_ptr_$returns$_t_array$_t_uint256_$dyn_memory_ptr_$",
+                        "typeString": "function (uint256[] memory) returns (uint256[] memory)"
+                      }
+                    },
+                    "id": 128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1339:26:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                      "typeString": "uint256[] memory"
+                    }
+                  },
+                  "id": 129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1339:26:1"
+                },
+                {
+                  "assignments": [
+                    133
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 133,
+                      "name": "pointer",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 145,
+                      "src": "1423:23:1",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                        "typeString": "uint256[] storage pointer"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 131,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1423:4:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 132,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "1423:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 135,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 134,
+                    "name": "allPoints",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 92,
+                    "src": "1449:9:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                      "typeString": "uint256[] storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1423:35:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 137,
+                        "name": "pointer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 133,
+                        "src": "1543:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
+                      ],
+                      "id": 136,
+                      "name": "forcedAction",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 114,
+                      "src": "1530:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_uint256_$dyn_storage_ptr_$returns$_t_array$_t_uint256_$dyn_storage_ptr_$",
+                        "typeString": "function (uint256[] storage pointer) returns (uint256[] storage pointer)"
+                      }
+                    },
+                    "id": 138,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1530:21:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[] storage pointer"
+                    }
+                  },
+                  "id": 139,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1530:21:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 141,
+                        "name": "pointer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 133,
+                        "src": "1597:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                          "typeString": "uint256[] storage pointer"
+                        }
+                      ],
+                      "id": 140,
+                      "name": "defaultAction",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 104,
+                      "src": "1583:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_uint256_$dyn_memory_ptr_$returns$_t_array$_t_uint256_$dyn_memory_ptr_$",
+                        "typeString": "function (uint256[] memory) returns (uint256[] memory)"
+                      }
+                    },
+                    "id": 142,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1583:22:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                      "typeString": "uint256[] memory"
+                    }
+                  },
+                  "id": 143,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1583:22:1"
+                }
+              ]
+            },
+            "id": 145,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "testFunction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 115,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "902:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 116,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "904:0:1"
+            },
+            "scope": 150,
+            "src": "881:733:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 148,
+              "nodeType": "Block",
+              "src": "1669:44:1",
+              "statements": []
+            },
+            "id": 149,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "DataLocation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 146,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1659:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 147,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1669:0:1"
+            },
+            "scope": 150,
+            "src": "1638:75:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 151,
+        "src": "487:1231:1"
+      }
+    ],
+    "src": "0:1720:1"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "1.0.1",
-  "updatedAt": "2017-11-06T22:12:39.396Z"
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-02-28T17:25:57.285Z"
 }

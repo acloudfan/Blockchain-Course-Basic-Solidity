@@ -693,6 +693,666 @@
     "name": "SourceUnit",
     "src": "0:797:9"
   },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/FuncTypes.sol",
+      "exportedSymbols": {
+        "FuncTypes": [
+          699
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".4"
+          ]
+        },
+        "id": 651,
+        "name": "PragmaDirective",
+        "src": "0:23:9"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "Demonstrates use of the function type variables\r*",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            699
+          ],
+          "name": "FuncTypes",
+          "scope": 700
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "secret",
+              "scope": 699,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes storage ref",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "bytes",
+                  "type": "bytes storage pointer"
+                },
+                "id": 652,
+                "name": "ElementaryTypeName",
+                "src": "118:5:9"
+              }
+            ],
+            "id": 653,
+            "name": "VariableDeclaration",
+            "src": "118:21:9"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "lengthFunctionVar",
+              "scope": 699,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "function (string memory) returns (uint256)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "payable": false,
+                  "stateMutability": "nonpayable",
+                  "type": "function (string memory) returns (uint256)",
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "",
+                          "scope": 699,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "string memory",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "string",
+                              "type": "string storage pointer"
+                            },
+                            "id": 654,
+                            "name": "ElementaryTypeName",
+                            "src": "199:6:9"
+                          }
+                        ],
+                        "id": 655,
+                        "name": "VariableDeclaration",
+                        "src": "199:6:9"
+                      }
+                    ],
+                    "id": 656,
+                    "name": "ParameterList",
+                    "src": "198:15:9"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "",
+                          "scope": 699,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint",
+                              "type": "uint256"
+                            },
+                            "id": 657,
+                            "name": "ElementaryTypeName",
+                            "src": "231:4:9"
+                          }
+                        ],
+                        "id": 658,
+                        "name": "VariableDeclaration",
+                        "src": "231:4:9"
+                      }
+                    ],
+                    "id": 659,
+                    "name": "ParameterList",
+                    "src": "230:6:9"
+                  }
+                ],
+                "id": 660,
+                "name": "FunctionTypeName",
+                "src": "190:64:9"
+              }
+            ],
+            "id": 661,
+            "name": "VariableDeclaration",
+            "src": "190:64:9"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "FuncTypes",
+              "payable": false,
+              "scope": 699,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 662,
+                "name": "ParameterList",
+                "src": "302:2:9"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 663,
+                "name": "ParameterList",
+                "src": "304:0:9"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "function (string memory) returns (uint256)"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 661,
+                              "type": "function (string memory) returns (uint256)",
+                              "value": "lengthFunctionVar"
+                            },
+                            "id": 664,
+                            "name": "Identifier",
+                            "src": "313:17:9"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 684,
+                              "type": "function (string memory) returns (uint256)",
+                              "value": "actualLengthFunction"
+                            },
+                            "id": 665,
+                            "name": "Identifier",
+                            "src": "333:20:9"
+                          }
+                        ],
+                        "id": 666,
+                        "name": "Assignment",
+                        "src": "313:40:9"
+                      }
+                    ],
+                    "id": 667,
+                    "name": "ExpressionStatement",
+                    "src": "313:40:9"
+                  }
+                ],
+                "id": 668,
+                "name": "Block",
+                "src": "304:57:9"
+              }
+            ],
+            "id": 669,
+            "name": "FunctionDefinition",
+            "src": "283:78:9"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "actualLengthFunction",
+              "payable": false,
+              "scope": 699,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "str",
+                      "scope": 684,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 670,
+                        "name": "ElementaryTypeName",
+                        "src": "488:6:9"
+                      }
+                    ],
+                    "id": 671,
+                    "name": "VariableDeclaration",
+                    "src": "488:17:9"
+                  }
+                ],
+                "id": 672,
+                "name": "ParameterList",
+                "src": "487:19:9"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "len",
+                      "scope": 684,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 673,
+                        "name": "ElementaryTypeName",
+                        "src": "525:4:9"
+                      }
+                    ],
+                    "id": 674,
+                    "name": "VariableDeclaration",
+                    "src": "525:8:9"
+                  }
+                ],
+                "id": 675,
+                "name": "ParameterList",
+                "src": "524:10:9"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 674,
+                              "type": "uint256",
+                              "value": "len"
+                            },
+                            "id": 676,
+                            "name": "Identifier",
+                            "src": "543:3:9"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "length",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "isStructConstructorCall": false,
+                                  "lValueRequested": false,
+                                  "names": [
+                                    null
+                                  ],
+                                  "type": "bytes memory",
+                                  "type_conversion": true
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": [
+                                        {
+                                          "typeIdentifier": "t_string_memory_ptr",
+                                          "typeString": "string memory"
+                                        }
+                                      ],
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "type": "type(bytes storage pointer)",
+                                      "value": "bytes"
+                                    },
+                                    "id": 677,
+                                    "name": "ElementaryTypeNameExpression",
+                                    "src": "549:5:9"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 671,
+                                      "type": "string memory",
+                                      "value": "str"
+                                    },
+                                    "id": 678,
+                                    "name": "Identifier",
+                                    "src": "555:3:9"
+                                  }
+                                ],
+                                "id": 679,
+                                "name": "FunctionCall",
+                                "src": "549:10:9"
+                              }
+                            ],
+                            "id": 680,
+                            "name": "MemberAccess",
+                            "src": "549:17:9"
+                          }
+                        ],
+                        "id": 681,
+                        "name": "Assignment",
+                        "src": "543:23:9"
+                      }
+                    ],
+                    "id": 682,
+                    "name": "ExpressionStatement",
+                    "src": "543:23:9"
+                  }
+                ],
+                "id": 683,
+                "name": "Block",
+                "src": "534:40:9"
+              }
+            ],
+            "id": 684,
+            "name": "FunctionDefinition",
+            "src": "457:117:9"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "indirectCall",
+              "payable": false,
+              "scope": 699,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "data",
+                      "scope": 698,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string calldata",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 685,
+                        "name": "ElementaryTypeName",
+                        "src": "708:6:9"
+                      }
+                    ],
+                    "id": 686,
+                    "name": "VariableDeclaration",
+                    "src": "708:12:9"
+                  }
+                ],
+                "id": 687,
+                "name": "ParameterList",
+                "src": "707:14:9"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "len",
+                      "scope": 698,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 688,
+                        "name": "ElementaryTypeName",
+                        "src": "739:4:9"
+                      }
+                    ],
+                    "id": 689,
+                    "name": "VariableDeclaration",
+                    "src": "739:8:9"
+                  }
+                ],
+                "id": 690,
+                "name": "ParameterList",
+                "src": "738:10:9"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 689,
+                              "type": "uint256",
+                              "value": "len"
+                            },
+                            "id": 691,
+                            "name": "Identifier",
+                            "src": "757:3:9"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_string_calldata_ptr",
+                                      "typeString": "string calldata"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 661,
+                                  "type": "function (string memory) returns (uint256)",
+                                  "value": "lengthFunctionVar"
+                                },
+                                "id": 692,
+                                "name": "Identifier",
+                                "src": "763:17:9"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 686,
+                                  "type": "string calldata",
+                                  "value": "data"
+                                },
+                                "id": 693,
+                                "name": "Identifier",
+                                "src": "781:4:9"
+                              }
+                            ],
+                            "id": 694,
+                            "name": "FunctionCall",
+                            "src": "763:23:9"
+                          }
+                        ],
+                        "id": 695,
+                        "name": "Assignment",
+                        "src": "757:29:9"
+                      }
+                    ],
+                    "id": 696,
+                    "name": "ExpressionStatement",
+                    "src": "757:29:9"
+                  }
+                ],
+                "id": 697,
+                "name": "Block",
+                "src": "748:46:9"
+              }
+            ],
+            "id": 698,
+            "name": "FunctionDefinition",
+            "src": "685:109:9"
+          }
+        ],
+        "id": 699,
+        "name": "ContractDefinition",
+        "src": "90:707:9"
+      }
+    ],
+    "id": 700,
+    "name": "SourceUnit",
+    "src": "0:797:9"
+  },
   "compiler": {
     "name": "solc",
     "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
@@ -701,7 +1361,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xaa588d3737b611bafd7bd713445b314bd453a5c8"
+      "address": "0xaa588d3737b611bafd7bd713445b314bd453a5c8",
+      "transactionHash": "0xf9648beb32a12d58660a64282bdf9ba4dc2512c8c52234ceeaedb8a3b3a10843"
     },
     "1490794988279": {
       "events": {},
@@ -710,6 +1371,6 @@
       "updated_at": 1491476112036
     }
   },
-  "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-22T19:34:44.841Z"
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-02-28T16:13:19.835Z"
 }

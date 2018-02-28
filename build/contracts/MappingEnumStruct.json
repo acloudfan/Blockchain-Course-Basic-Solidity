@@ -3337,6 +3337,3211 @@
     "name": "SourceUnit",
     "src": "0:2341:13"
   },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/MappingEnumStruct.sol",
+      "exportedSymbols": {
+        "MappingEnumStruct": [
+          1323
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".4"
+          ]
+        },
+        "id": 1090,
+        "name": "PragmaDirective",
+        "src": "0:23:13"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1323
+          ],
+          "name": "MappingEnumStruct",
+          "scope": 1324
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "capitals",
+              "scope": 1323,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(string memory => string storage ref)",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(string memory => string storage ref)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 1091,
+                    "name": "ElementaryTypeName",
+                    "src": "82:6:13"
+                  },
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string storage pointer"
+                    },
+                    "id": 1092,
+                    "name": "ElementaryTypeName",
+                    "src": "92:6:13"
+                  }
+                ],
+                "id": 1093,
+                "name": "Mapping",
+                "src": "74:25:13"
+              }
+            ],
+            "id": 1094,
+            "name": "VariableDeclaration",
+            "src": "74:35:13"
+          },
+          {
+            "attributes": {
+              "canonicalName": "MappingEnumStruct.continents",
+              "name": "continents"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "Africa"
+                },
+                "id": 1095,
+                "name": "EnumValue",
+                "src": "149:6:13"
+              },
+              {
+                "attributes": {
+                  "name": "Antartica"
+                },
+                "id": 1096,
+                "name": "EnumValue",
+                "src": "156:9:13"
+              },
+              {
+                "attributes": {
+                  "name": "Asia"
+                },
+                "id": 1097,
+                "name": "EnumValue",
+                "src": "166:4:13"
+              },
+              {
+                "attributes": {
+                  "name": "Australia"
+                },
+                "id": 1098,
+                "name": "EnumValue",
+                "src": "171:9:13"
+              },
+              {
+                "attributes": {
+                  "name": "Europe"
+                },
+                "id": 1099,
+                "name": "EnumValue",
+                "src": "181:6:13"
+              },
+              {
+                "attributes": {
+                  "name": "North_America"
+                },
+                "id": 1100,
+                "name": "EnumValue",
+                "src": "188:13:13"
+              },
+              {
+                "attributes": {
+                  "name": "South_America"
+                },
+                "id": 1101,
+                "name": "EnumValue",
+                "src": "203:13:13"
+              }
+            ],
+            "id": 1102,
+            "name": "EnumDefinition",
+            "src": "132:85:13"
+          },
+          {
+            "attributes": {
+              "canonicalName": "MappingEnumStruct.country",
+              "name": "country",
+              "scope": 1323,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "name",
+                  "scope": 1109,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bytes32",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 1103,
+                    "name": "ElementaryTypeName",
+                    "src": "256:7:13"
+                  }
+                ],
+                "id": 1104,
+                "name": "VariableDeclaration",
+                "src": "256:15:13"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "continent",
+                  "scope": 1109,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "enum MappingEnumStruct.continents",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "continents",
+                      "referencedDeclaration": 1102,
+                      "type": "enum MappingEnumStruct.continents"
+                    },
+                    "id": 1105,
+                    "name": "UserDefinedTypeName",
+                    "src": "277:10:13"
+                  }
+                ],
+                "id": 1106,
+                "name": "VariableDeclaration",
+                "src": "277:20:13"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "populationInMillion",
+                  "scope": 1109,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint16",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint16",
+                      "type": "uint16"
+                    },
+                    "id": 1107,
+                    "name": "ElementaryTypeName",
+                    "src": "303:6:13"
+                  }
+                ],
+                "id": 1108,
+                "name": "VariableDeclaration",
+                "src": "303:31:13"
+              }
+            ],
+            "id": 1109,
+            "name": "StructDefinition",
+            "src": "235:104:13"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "europeanCountries",
+              "scope": 1323,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct MappingEnumStruct.country storage ref[] storage ref",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "struct MappingEnumStruct.country storage ref[] storage pointer"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "country",
+                      "referencedDeclaration": 1109,
+                      "type": "struct MappingEnumStruct.country storage pointer"
+                    },
+                    "id": 1110,
+                    "name": "UserDefinedTypeName",
+                    "src": "398:7:13"
+                  }
+                ],
+                "id": 1111,
+                "name": "ArrayTypeName",
+                "src": "398:9:13"
+              }
+            ],
+            "id": 1112,
+            "name": "VariableDeclaration",
+            "src": "398:28:13"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getEuropeanCountry",
+              "payable": false,
+              "scope": 1323,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "name",
+                      "scope": 1161,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 1113,
+                        "name": "ElementaryTypeName",
+                        "src": "487:7:13"
+                      }
+                    ],
+                    "id": 1114,
+                    "name": "VariableDeclaration",
+                    "src": "487:12:13"
+                  }
+                ],
+                "id": 1115,
+                "name": "ParameterList",
+                "src": "486:14:13"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1161,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 1116,
+                        "name": "ElementaryTypeName",
+                        "src": "510:7:13"
+                      }
+                    ],
+                    "id": 1117,
+                    "name": "VariableDeclaration",
+                    "src": "510:7:13"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1161,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 1118,
+                        "name": "ElementaryTypeName",
+                        "src": "519:5:13"
+                      }
+                    ],
+                    "id": 1119,
+                    "name": "VariableDeclaration",
+                    "src": "519:5:13"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1161,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 1120,
+                        "name": "ElementaryTypeName",
+                        "src": "526:6:13"
+                      }
+                    ],
+                    "id": 1121,
+                    "name": "VariableDeclaration",
+                    "src": "526:6:13"
+                  }
+                ],
+                "id": 1122,
+                "name": "ParameterList",
+                "src": "509:24:13"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "assignments": [
+                            1124
+                          ]
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "constant": false,
+                              "name": "i",
+                              "scope": 1161,
+                              "stateVariable": false,
+                              "storageLocation": "default",
+                              "type": "uint8",
+                              "value": null,
+                              "visibility": "internal"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "name": "uint8",
+                                  "type": "uint8"
+                                },
+                                "id": 1123,
+                                "name": "ElementaryTypeName",
+                                "src": "591:5:13"
+                              }
+                            ],
+                            "id": 1124,
+                            "name": "VariableDeclaration",
+                            "src": "591:7:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "30",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 0",
+                              "value": "0"
+                            },
+                            "id": 1125,
+                            "name": "Literal",
+                            "src": "601:1:13"
+                          }
+                        ],
+                        "id": 1126,
+                        "name": "VariableDeclarationStatement",
+                        "src": "591:11:13"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "<",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1124,
+                              "type": "uint8",
+                              "value": "i"
+                            },
+                            "id": 1127,
+                            "name": "Identifier",
+                            "src": "604:1:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "length",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1112,
+                                  "type": "struct MappingEnumStruct.country storage ref[] storage ref",
+                                  "value": "europeanCountries"
+                                },
+                                "id": 1128,
+                                "name": "Identifier",
+                                "src": "608:17:13"
+                              }
+                            ],
+                            "id": 1129,
+                            "name": "MemberAccess",
+                            "src": "608:24:13"
+                          }
+                        ],
+                        "id": 1130,
+                        "name": "BinaryOperation",
+                        "src": "604:28:13"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "++",
+                              "prefix": false,
+                              "type": "uint8"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1124,
+                                  "type": "uint8",
+                                  "value": "i"
+                                },
+                                "id": 1131,
+                                "name": "Identifier",
+                                "src": "634:1:13"
+                              }
+                            ],
+                            "id": 1132,
+                            "name": "UnaryOperation",
+                            "src": "634:3:13"
+                          }
+                        ],
+                        "id": 1133,
+                        "name": "ExpressionStatement",
+                        "src": "634:3:13"
+                      },
+                      {
+                        "children": [
+                          {
+                            "attributes": {
+                              "falseBody": null
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_bytes32",
+                                    "typeString": "bytes32"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "==",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1114,
+                                      "type": "bytes32",
+                                      "value": "name"
+                                    },
+                                    "id": 1134,
+                                    "name": "Identifier",
+                                    "src": "648:4:13"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "name",
+                                      "referencedDeclaration": 1104,
+                                      "type": "bytes32"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isLValue": true,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "type": "struct MappingEnumStruct.country storage ref"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 1112,
+                                              "type": "struct MappingEnumStruct.country storage ref[] storage ref",
+                                              "value": "europeanCountries"
+                                            },
+                                            "id": 1135,
+                                            "name": "Identifier",
+                                            "src": "656:17:13"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "overloadedDeclarations": [
+                                                null
+                                              ],
+                                              "referencedDeclaration": 1124,
+                                              "type": "uint8",
+                                              "value": "i"
+                                            },
+                                            "id": 1136,
+                                            "name": "Identifier",
+                                            "src": "674:1:13"
+                                          }
+                                        ],
+                                        "id": 1137,
+                                        "name": "IndexAccess",
+                                        "src": "656:20:13"
+                                      }
+                                    ],
+                                    "id": 1138,
+                                    "name": "MemberAccess",
+                                    "src": "656:25:13"
+                                  }
+                                ],
+                                "id": 1139,
+                                "name": "BinaryOperation",
+                                "src": "648:33:13"
+                              },
+                              {
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "functionReturnParameters": 1122
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "isConstant": false,
+                                          "isInlineArray": false,
+                                          "isLValue": false,
+                                          "isPure": false,
+                                          "lValueRequested": false,
+                                          "type": "tuple(bytes32,uint8,uint16)"
+                                        },
+                                        "children": [
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": false,
+                                              "member_name": "name",
+                                              "referencedDeclaration": 1104,
+                                              "type": "bytes32"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "isConstant": false,
+                                                  "isLValue": true,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "type": "struct MappingEnumStruct.country storage ref"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 1112,
+                                                      "type": "struct MappingEnumStruct.country storage ref[] storage ref",
+                                                      "value": "europeanCountries"
+                                                    },
+                                                    "id": 1140,
+                                                    "name": "Identifier",
+                                                    "src": "699:17:13"
+                                                  },
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 1124,
+                                                      "type": "uint8",
+                                                      "value": "i"
+                                                    },
+                                                    "id": 1141,
+                                                    "name": "Identifier",
+                                                    "src": "717:1:13"
+                                                  }
+                                                ],
+                                                "id": 1142,
+                                                "name": "IndexAccess",
+                                                "src": "699:20:13"
+                                              }
+                                            ],
+                                            "id": 1143,
+                                            "name": "MemberAccess",
+                                            "src": "699:25:13"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": false,
+                                              "isPure": false,
+                                              "isStructConstructorCall": false,
+                                              "lValueRequested": false,
+                                              "names": [
+                                                null
+                                              ],
+                                              "type": "uint8",
+                                              "type_conversion": true
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": [
+                                                    {
+                                                      "typeIdentifier": "t_enum$_continents_$1102",
+                                                      "typeString": "enum MappingEnumStruct.continents"
+                                                    }
+                                                  ],
+                                                  "isConstant": false,
+                                                  "isLValue": false,
+                                                  "isPure": true,
+                                                  "lValueRequested": false,
+                                                  "type": "type(uint8)",
+                                                  "value": "uint8"
+                                                },
+                                                "id": 1144,
+                                                "name": "ElementaryTypeNameExpression",
+                                                "src": "742:5:13"
+                                              },
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "isConstant": false,
+                                                  "isLValue": true,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "member_name": "continent",
+                                                  "referencedDeclaration": 1106,
+                                                  "type": "enum MappingEnumStruct.continents"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "isConstant": false,
+                                                      "isLValue": true,
+                                                      "isPure": false,
+                                                      "lValueRequested": false,
+                                                      "type": "struct MappingEnumStruct.country storage ref"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "attributes": {
+                                                          "argumentTypes": null,
+                                                          "overloadedDeclarations": [
+                                                            null
+                                                          ],
+                                                          "referencedDeclaration": 1112,
+                                                          "type": "struct MappingEnumStruct.country storage ref[] storage ref",
+                                                          "value": "europeanCountries"
+                                                        },
+                                                        "id": 1145,
+                                                        "name": "Identifier",
+                                                        "src": "748:17:13"
+                                                      },
+                                                      {
+                                                        "attributes": {
+                                                          "argumentTypes": null,
+                                                          "overloadedDeclarations": [
+                                                            null
+                                                          ],
+                                                          "referencedDeclaration": 1124,
+                                                          "type": "uint8",
+                                                          "value": "i"
+                                                        },
+                                                        "id": 1146,
+                                                        "name": "Identifier",
+                                                        "src": "766:1:13"
+                                                      }
+                                                    ],
+                                                    "id": 1147,
+                                                    "name": "IndexAccess",
+                                                    "src": "748:20:13"
+                                                  }
+                                                ],
+                                                "id": 1148,
+                                                "name": "MemberAccess",
+                                                "src": "748:30:13"
+                                              }
+                                            ],
+                                            "id": 1149,
+                                            "name": "FunctionCall",
+                                            "src": "742:37:13"
+                                          },
+                                          {
+                                            "attributes": {
+                                              "argumentTypes": null,
+                                              "isConstant": false,
+                                              "isLValue": true,
+                                              "isPure": false,
+                                              "lValueRequested": false,
+                                              "member_name": "populationInMillion",
+                                              "referencedDeclaration": 1108,
+                                              "type": "uint16"
+                                            },
+                                            "children": [
+                                              {
+                                                "attributes": {
+                                                  "argumentTypes": null,
+                                                  "isConstant": false,
+                                                  "isLValue": true,
+                                                  "isPure": false,
+                                                  "lValueRequested": false,
+                                                  "type": "struct MappingEnumStruct.country storage ref"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 1112,
+                                                      "type": "struct MappingEnumStruct.country storage ref[] storage ref",
+                                                      "value": "europeanCountries"
+                                                    },
+                                                    "id": 1150,
+                                                    "name": "Identifier",
+                                                    "src": "796:17:13"
+                                                  },
+                                                  {
+                                                    "attributes": {
+                                                      "argumentTypes": null,
+                                                      "overloadedDeclarations": [
+                                                        null
+                                                      ],
+                                                      "referencedDeclaration": 1124,
+                                                      "type": "uint8",
+                                                      "value": "i"
+                                                    },
+                                                    "id": 1151,
+                                                    "name": "Identifier",
+                                                    "src": "814:1:13"
+                                                  }
+                                                ],
+                                                "id": 1152,
+                                                "name": "IndexAccess",
+                                                "src": "796:20:13"
+                                              }
+                                            ],
+                                            "id": 1153,
+                                            "name": "MemberAccess",
+                                            "src": "796:40:13"
+                                          }
+                                        ],
+                                        "id": 1154,
+                                        "name": "TupleExpression",
+                                        "src": "698:139:13"
+                                      }
+                                    ],
+                                    "id": 1155,
+                                    "name": "Return",
+                                    "src": "691:146:13"
+                                  }
+                                ],
+                                "id": 1156,
+                                "name": "Block",
+                                "src": "682:163:13"
+                              }
+                            ],
+                            "id": 1157,
+                            "name": "IfStatement",
+                            "src": "645:200:13"
+                          }
+                        ],
+                        "id": 1158,
+                        "name": "Block",
+                        "src": "638:212:13"
+                      }
+                    ],
+                    "id": 1159,
+                    "name": "ForStatement",
+                    "src": "587:263:13"
+                  }
+                ],
+                "id": 1160,
+                "name": "Block",
+                "src": "534:320:13"
+              }
+            ],
+            "id": 1161,
+            "name": "FunctionDefinition",
+            "src": "459:395:13"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "addEuropeanCountry",
+              "payable": false,
+              "scope": 1323,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "nm",
+                      "scope": 1213,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 1162,
+                        "name": "ElementaryTypeName",
+                        "src": "920:7:13"
+                      }
+                    ],
+                    "id": 1163,
+                    "name": "VariableDeclaration",
+                    "src": "920:10:13"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "cont",
+                      "scope": 1213,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 1164,
+                        "name": "ElementaryTypeName",
+                        "src": "932:5:13"
+                      }
+                    ],
+                    "id": 1165,
+                    "name": "VariableDeclaration",
+                    "src": "932:10:13"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "pop",
+                      "scope": 1213,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 1166,
+                        "name": "ElementaryTypeName",
+                        "src": "944:6:13"
+                      }
+                    ],
+                    "id": 1167,
+                    "name": "VariableDeclaration",
+                    "src": "944:10:13"
+                  }
+                ],
+                "id": 1168,
+                "name": "ParameterList",
+                "src": "919:36:13"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1213,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 1169,
+                        "name": "ElementaryTypeName",
+                        "src": "965:4:13"
+                      }
+                    ],
+                    "id": 1170,
+                    "name": "VariableDeclaration",
+                    "src": "965:4:13"
+                  }
+                ],
+                "id": 1171,
+                "name": "ParameterList",
+                "src": "964:6:13"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "!=",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1165,
+                              "type": "uint8",
+                              "value": "cont"
+                            },
+                            "id": 1172,
+                            "name": "Identifier",
+                            "src": "979:4:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint8",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_continents_$1102",
+                                      "typeString": "enum MappingEnumStruct.continents"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint8)",
+                                  "value": "uint8"
+                                },
+                                "id": 1173,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "987:5:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Europe",
+                                  "referencedDeclaration": null,
+                                  "type": "enum MappingEnumStruct.continents"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1102,
+                                      "type": "type(enum MappingEnumStruct.continents)",
+                                      "value": "continents"
+                                    },
+                                    "id": 1174,
+                                    "name": "Identifier",
+                                    "src": "993:10:13"
+                                  }
+                                ],
+                                "id": 1175,
+                                "name": "MemberAccess",
+                                "src": "993:17:13"
+                              }
+                            ],
+                            "id": 1176,
+                            "name": "FunctionCall",
+                            "src": "987:24:13"
+                          }
+                        ],
+                        "id": 1177,
+                        "name": "BinaryOperation",
+                        "src": "979:32:13"
+                      },
+                      {
+                        "attributes": {
+                          "functionReturnParameters": 1171
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "66616c7365",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "bool",
+                              "type": "bool",
+                              "value": "false"
+                            },
+                            "id": 1178,
+                            "name": "Literal",
+                            "src": "1020:5:13"
+                          }
+                        ],
+                        "id": 1179,
+                        "name": "Return",
+                        "src": "1013:12:13"
+                      }
+                    ],
+                    "id": 1180,
+                    "name": "IfStatement",
+                    "src": "976:49:13"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        null
+                      ],
+                      "initialValue": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "ctry",
+                          "scope": 1213,
+                          "stateVariable": false,
+                          "storageLocation": "memory",
+                          "type": "struct MappingEnumStruct.country memory",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "contractScope": null,
+                              "name": "country",
+                              "referencedDeclaration": 1109,
+                              "type": "struct MappingEnumStruct.country storage pointer"
+                            },
+                            "id": 1181,
+                            "name": "UserDefinedTypeName",
+                            "src": "1032:7:13"
+                          }
+                        ],
+                        "id": 1182,
+                        "name": "VariableDeclaration",
+                        "src": "1032:19:13"
+                      }
+                    ],
+                    "id": 1183,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1032:19:13"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "bytes32"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "name",
+                              "referencedDeclaration": 1104,
+                              "type": "bytes32"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1182,
+                                  "type": "struct MappingEnumStruct.country memory",
+                                  "value": "ctry"
+                                },
+                                "id": 1184,
+                                "name": "Identifier",
+                                "src": "1230:4:13"
+                              }
+                            ],
+                            "id": 1186,
+                            "name": "MemberAccess",
+                            "src": "1230:9:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1163,
+                              "type": "bytes32",
+                              "value": "nm"
+                            },
+                            "id": 1187,
+                            "name": "Identifier",
+                            "src": "1242:2:13"
+                          }
+                        ],
+                        "id": 1188,
+                        "name": "Assignment",
+                        "src": "1230:14:13"
+                      }
+                    ],
+                    "id": 1189,
+                    "name": "ExpressionStatement",
+                    "src": "1230:14:13"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "enum MappingEnumStruct.continents"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "continent",
+                              "referencedDeclaration": 1106,
+                              "type": "enum MappingEnumStruct.continents"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1182,
+                                  "type": "struct MappingEnumStruct.country memory",
+                                  "value": "ctry"
+                                },
+                                "id": 1190,
+                                "name": "Identifier",
+                                "src": "1249:4:13"
+                              }
+                            ],
+                            "id": 1192,
+                            "name": "MemberAccess",
+                            "src": "1249:14:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "enum MappingEnumStruct.continents",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint8",
+                                      "typeString": "uint8"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1102,
+                                  "type": "type(enum MappingEnumStruct.continents)",
+                                  "value": "continents"
+                                },
+                                "id": 1193,
+                                "name": "Identifier",
+                                "src": "1266:10:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1165,
+                                  "type": "uint8",
+                                  "value": "cont"
+                                },
+                                "id": 1194,
+                                "name": "Identifier",
+                                "src": "1277:4:13"
+                              }
+                            ],
+                            "id": 1195,
+                            "name": "FunctionCall",
+                            "src": "1266:16:13"
+                          }
+                        ],
+                        "id": 1196,
+                        "name": "Assignment",
+                        "src": "1249:33:13"
+                      }
+                    ],
+                    "id": 1197,
+                    "name": "ExpressionStatement",
+                    "src": "1249:33:13"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "uint16"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "member_name": "populationInMillion",
+                              "referencedDeclaration": 1108,
+                              "type": "uint16"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1182,
+                                  "type": "struct MappingEnumStruct.country memory",
+                                  "value": "ctry"
+                                },
+                                "id": 1198,
+                                "name": "Identifier",
+                                "src": "1287:4:13"
+                              }
+                            ],
+                            "id": 1200,
+                            "name": "MemberAccess",
+                            "src": "1287:24:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1167,
+                              "type": "uint16",
+                              "value": "pop"
+                            },
+                            "id": 1201,
+                            "name": "Identifier",
+                            "src": "1314:3:13"
+                          }
+                        ],
+                        "id": 1202,
+                        "name": "Assignment",
+                        "src": "1287:30:13"
+                      }
+                    ],
+                    "id": 1203,
+                    "name": "ExpressionStatement",
+                    "src": "1287:30:13"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_struct$_country_$1109_memory_ptr",
+                                  "typeString": "struct MappingEnumStruct.country memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (struct MappingEnumStruct.country storage ref) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1112,
+                                  "type": "struct MappingEnumStruct.country storage ref[] storage ref",
+                                  "value": "europeanCountries"
+                                },
+                                "id": 1204,
+                                "name": "Identifier",
+                                "src": "1358:17:13"
+                              }
+                            ],
+                            "id": 1206,
+                            "name": "MemberAccess",
+                            "src": "1358:22:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1182,
+                              "type": "struct MappingEnumStruct.country memory",
+                              "value": "ctry"
+                            },
+                            "id": 1207,
+                            "name": "Identifier",
+                            "src": "1381:4:13"
+                          }
+                        ],
+                        "id": 1208,
+                        "name": "FunctionCall",
+                        "src": "1358:28:13"
+                      }
+                    ],
+                    "id": 1209,
+                    "name": "ExpressionStatement",
+                    "src": "1358:28:13"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 1171
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 1210,
+                        "name": "Literal",
+                        "src": "1398:4:13"
+                      }
+                    ],
+                    "id": 1211,
+                    "name": "Return",
+                    "src": "1391:11:13"
+                  }
+                ],
+                "id": 1212,
+                "name": "Block",
+                "src": "971:436:13"
+              }
+            ],
+            "id": 1213,
+            "name": "FunctionDefinition",
+            "src": "892:515:13"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "addCapital",
+              "payable": false,
+              "scope": 1323,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "country",
+                      "scope": 1227,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 1214,
+                        "name": "ElementaryTypeName",
+                        "src": "1437:6:13"
+                      }
+                    ],
+                    "id": 1215,
+                    "name": "VariableDeclaration",
+                    "src": "1437:14:13"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "capital",
+                      "scope": 1227,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 1216,
+                        "name": "ElementaryTypeName",
+                        "src": "1453:6:13"
+                      }
+                    ],
+                    "id": 1217,
+                    "name": "VariableDeclaration",
+                    "src": "1453:14:13"
+                  }
+                ],
+                "id": 1218,
+                "name": "ParameterList",
+                "src": "1436:32:13"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1219,
+                "name": "ParameterList",
+                "src": "1468:0:13"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1094,
+                                  "type": "mapping(string memory => string storage ref)",
+                                  "value": "capitals"
+                                },
+                                "id": 1220,
+                                "name": "Identifier",
+                                "src": "1520:8:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1215,
+                                  "type": "string memory",
+                                  "value": "country"
+                                },
+                                "id": 1221,
+                                "name": "Identifier",
+                                "src": "1529:7:13"
+                              }
+                            ],
+                            "id": 1222,
+                            "name": "IndexAccess",
+                            "src": "1520:17:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1217,
+                              "type": "string memory",
+                              "value": "capital"
+                            },
+                            "id": 1223,
+                            "name": "Identifier",
+                            "src": "1540:7:13"
+                          }
+                        ],
+                        "id": 1224,
+                        "name": "Assignment",
+                        "src": "1520:27:13"
+                      }
+                    ],
+                    "id": 1225,
+                    "name": "ExpressionStatement",
+                    "src": "1520:27:13"
+                  }
+                ],
+                "id": 1226,
+                "name": "Block",
+                "src": "1468:84:13"
+              }
+            ],
+            "id": 1227,
+            "name": "FunctionDefinition",
+            "src": "1417:135:13"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getCapital",
+              "payable": false,
+              "scope": 1323,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "country",
+                      "scope": 1239,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 1228,
+                        "name": "ElementaryTypeName",
+                        "src": "1617:6:13"
+                      }
+                    ],
+                    "id": 1229,
+                    "name": "VariableDeclaration",
+                    "src": "1617:14:13"
+                  }
+                ],
+                "id": 1230,
+                "name": "ParameterList",
+                "src": "1616:16:13"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1239,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 1231,
+                        "name": "ElementaryTypeName",
+                        "src": "1642:6:13"
+                      }
+                    ],
+                    "id": 1232,
+                    "name": "VariableDeclaration",
+                    "src": "1642:6:13"
+                  }
+                ],
+                "id": 1233,
+                "name": "ParameterList",
+                "src": "1641:8:13"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 1233
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1094,
+                              "type": "mapping(string memory => string storage ref)",
+                              "value": "capitals"
+                            },
+                            "id": 1234,
+                            "name": "Identifier",
+                            "src": "1662:8:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1229,
+                              "type": "string memory",
+                              "value": "country"
+                            },
+                            "id": 1235,
+                            "name": "Identifier",
+                            "src": "1671:7:13"
+                          }
+                        ],
+                        "id": 1236,
+                        "name": "IndexAccess",
+                        "src": "1662:17:13"
+                      }
+                    ],
+                    "id": 1237,
+                    "name": "Return",
+                    "src": "1655:24:13"
+                  }
+                ],
+                "id": 1238,
+                "name": "Block",
+                "src": "1649:35:13"
+              }
+            ],
+            "id": 1239,
+            "name": "FunctionDefinition",
+            "src": "1597:87:13"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "removeCapital",
+              "payable": false,
+              "scope": 1323,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "country",
+                      "scope": 1251,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 1240,
+                        "name": "ElementaryTypeName",
+                        "src": "1758:6:13"
+                      }
+                    ],
+                    "id": 1241,
+                    "name": "VariableDeclaration",
+                    "src": "1758:14:13"
+                  }
+                ],
+                "id": 1242,
+                "name": "ParameterList",
+                "src": "1757:16:13"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1243,
+                "name": "ParameterList",
+                "src": "1773:0:13"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "delete",
+                          "prefix": true,
+                          "type": "tuple()"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "string storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "type": "string storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1094,
+                                      "type": "mapping(string memory => string storage ref)",
+                                      "value": "capitals"
+                                    },
+                                    "id": 1244,
+                                    "name": "Identifier",
+                                    "src": "1786:8:13"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1241,
+                                      "type": "string memory",
+                                      "value": "country"
+                                    },
+                                    "id": 1245,
+                                    "name": "Identifier",
+                                    "src": "1795:7:13"
+                                  }
+                                ],
+                                "id": 1246,
+                                "name": "IndexAccess",
+                                "src": "1786:17:13"
+                              }
+                            ],
+                            "id": 1247,
+                            "name": "TupleExpression",
+                            "src": "1785:19:13"
+                          }
+                        ],
+                        "id": 1248,
+                        "name": "UnaryOperation",
+                        "src": "1779:25:13"
+                      }
+                    ],
+                    "id": 1249,
+                    "name": "ExpressionStatement",
+                    "src": "1779:25:13"
+                  }
+                ],
+                "id": 1250,
+                "name": "Block",
+                "src": "1773:36:13"
+              }
+            ],
+            "id": 1251,
+            "name": "FunctionDefinition",
+            "src": "1735:74:13"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getContinent",
+              "payable": false,
+              "scope": 1323,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "arg",
+                      "scope": 1322,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint8",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint8",
+                          "type": "uint8"
+                        },
+                        "id": 1252,
+                        "name": "ElementaryTypeName",
+                        "src": "1874:5:13"
+                      }
+                    ],
+                    "id": 1253,
+                    "name": "VariableDeclaration",
+                    "src": "1874:9:13"
+                  }
+                ],
+                "id": 1254,
+                "name": "ParameterList",
+                "src": "1873:11:13"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1322,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string memory",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string storage pointer"
+                        },
+                        "id": 1255,
+                        "name": "ElementaryTypeName",
+                        "src": "1894:6:13"
+                      }
+                    ],
+                    "id": 1256,
+                    "name": "VariableDeclaration",
+                    "src": "1894:6:13"
+                  }
+                ],
+                "id": 1257,
+                "name": "ParameterList",
+                "src": "1893:8:13"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1253,
+                              "type": "uint8",
+                              "value": "arg"
+                            },
+                            "id": 1258,
+                            "name": "Identifier",
+                            "src": "1909:3:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint8",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_continents_$1102",
+                                      "typeString": "enum MappingEnumStruct.continents"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint8)",
+                                  "value": "uint8"
+                                },
+                                "id": 1259,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "1916:5:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Africa",
+                                  "referencedDeclaration": null,
+                                  "type": "enum MappingEnumStruct.continents"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1102,
+                                      "type": "type(enum MappingEnumStruct.continents)",
+                                      "value": "continents"
+                                    },
+                                    "id": 1260,
+                                    "name": "Identifier",
+                                    "src": "1922:10:13"
+                                  }
+                                ],
+                                "id": 1261,
+                                "name": "MemberAccess",
+                                "src": "1922:17:13"
+                              }
+                            ],
+                            "id": 1262,
+                            "name": "FunctionCall",
+                            "src": "1916:24:13"
+                          }
+                        ],
+                        "id": 1263,
+                        "name": "BinaryOperation",
+                        "src": "1909:31:13"
+                      },
+                      {
+                        "attributes": {
+                          "functionReturnParameters": 1257
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "416672696361",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Africa\"",
+                              "value": "Africa"
+                            },
+                            "id": 1264,
+                            "name": "Literal",
+                            "src": "1949:8:13"
+                          }
+                        ],
+                        "id": 1265,
+                        "name": "Return",
+                        "src": "1942:15:13"
+                      }
+                    ],
+                    "id": 1266,
+                    "name": "IfStatement",
+                    "src": "1906:51:13"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1253,
+                              "type": "uint8",
+                              "value": "arg"
+                            },
+                            "id": 1267,
+                            "name": "Identifier",
+                            "src": "1965:3:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint8",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_continents_$1102",
+                                      "typeString": "enum MappingEnumStruct.continents"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint8)",
+                                  "value": "uint8"
+                                },
+                                "id": 1268,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "1972:5:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Antartica",
+                                  "referencedDeclaration": null,
+                                  "type": "enum MappingEnumStruct.continents"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1102,
+                                      "type": "type(enum MappingEnumStruct.continents)",
+                                      "value": "continents"
+                                    },
+                                    "id": 1269,
+                                    "name": "Identifier",
+                                    "src": "1978:10:13"
+                                  }
+                                ],
+                                "id": 1270,
+                                "name": "MemberAccess",
+                                "src": "1978:20:13"
+                              }
+                            ],
+                            "id": 1271,
+                            "name": "FunctionCall",
+                            "src": "1972:27:13"
+                          }
+                        ],
+                        "id": 1272,
+                        "name": "BinaryOperation",
+                        "src": "1965:34:13"
+                      },
+                      {
+                        "attributes": {
+                          "functionReturnParameters": 1257
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "416e74617274696361",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Antartica\"",
+                              "value": "Antartica"
+                            },
+                            "id": 1273,
+                            "name": "Literal",
+                            "src": "2008:11:13"
+                          }
+                        ],
+                        "id": 1274,
+                        "name": "Return",
+                        "src": "2001:18:13"
+                      }
+                    ],
+                    "id": 1275,
+                    "name": "IfStatement",
+                    "src": "1962:57:13"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1253,
+                              "type": "uint8",
+                              "value": "arg"
+                            },
+                            "id": 1276,
+                            "name": "Identifier",
+                            "src": "2027:3:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint8",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_continents_$1102",
+                                      "typeString": "enum MappingEnumStruct.continents"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint8)",
+                                  "value": "uint8"
+                                },
+                                "id": 1277,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "2034:5:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Asia",
+                                  "referencedDeclaration": null,
+                                  "type": "enum MappingEnumStruct.continents"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1102,
+                                      "type": "type(enum MappingEnumStruct.continents)",
+                                      "value": "continents"
+                                    },
+                                    "id": 1278,
+                                    "name": "Identifier",
+                                    "src": "2040:10:13"
+                                  }
+                                ],
+                                "id": 1279,
+                                "name": "MemberAccess",
+                                "src": "2040:15:13"
+                              }
+                            ],
+                            "id": 1280,
+                            "name": "FunctionCall",
+                            "src": "2034:22:13"
+                          }
+                        ],
+                        "id": 1281,
+                        "name": "BinaryOperation",
+                        "src": "2027:29:13"
+                      },
+                      {
+                        "attributes": {
+                          "functionReturnParameters": 1257
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "41736961",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Asia\"",
+                              "value": "Asia"
+                            },
+                            "id": 1282,
+                            "name": "Literal",
+                            "src": "2065:6:13"
+                          }
+                        ],
+                        "id": 1283,
+                        "name": "Return",
+                        "src": "2058:13:13"
+                      }
+                    ],
+                    "id": 1284,
+                    "name": "IfStatement",
+                    "src": "2024:47:13"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1253,
+                              "type": "uint8",
+                              "value": "arg"
+                            },
+                            "id": 1285,
+                            "name": "Identifier",
+                            "src": "2079:3:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint8",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_continents_$1102",
+                                      "typeString": "enum MappingEnumStruct.continents"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint8)",
+                                  "value": "uint8"
+                                },
+                                "id": 1286,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "2086:5:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Australia",
+                                  "referencedDeclaration": null,
+                                  "type": "enum MappingEnumStruct.continents"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1102,
+                                      "type": "type(enum MappingEnumStruct.continents)",
+                                      "value": "continents"
+                                    },
+                                    "id": 1287,
+                                    "name": "Identifier",
+                                    "src": "2092:10:13"
+                                  }
+                                ],
+                                "id": 1288,
+                                "name": "MemberAccess",
+                                "src": "2092:20:13"
+                              }
+                            ],
+                            "id": 1289,
+                            "name": "FunctionCall",
+                            "src": "2086:27:13"
+                          }
+                        ],
+                        "id": 1290,
+                        "name": "BinaryOperation",
+                        "src": "2079:34:13"
+                      },
+                      {
+                        "attributes": {
+                          "functionReturnParameters": 1257
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "4175737472616c6961",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Australia\"",
+                              "value": "Australia"
+                            },
+                            "id": 1291,
+                            "name": "Literal",
+                            "src": "2122:11:13"
+                          }
+                        ],
+                        "id": 1292,
+                        "name": "Return",
+                        "src": "2115:18:13"
+                      }
+                    ],
+                    "id": 1293,
+                    "name": "IfStatement",
+                    "src": "2076:57:13"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1253,
+                              "type": "uint8",
+                              "value": "arg"
+                            },
+                            "id": 1294,
+                            "name": "Identifier",
+                            "src": "2141:3:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint8",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_continents_$1102",
+                                      "typeString": "enum MappingEnumStruct.continents"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint8)",
+                                  "value": "uint8"
+                                },
+                                "id": 1295,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "2148:5:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "Europe",
+                                  "referencedDeclaration": null,
+                                  "type": "enum MappingEnumStruct.continents"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1102,
+                                      "type": "type(enum MappingEnumStruct.continents)",
+                                      "value": "continents"
+                                    },
+                                    "id": 1296,
+                                    "name": "Identifier",
+                                    "src": "2154:10:13"
+                                  }
+                                ],
+                                "id": 1297,
+                                "name": "MemberAccess",
+                                "src": "2154:17:13"
+                              }
+                            ],
+                            "id": 1298,
+                            "name": "FunctionCall",
+                            "src": "2148:24:13"
+                          }
+                        ],
+                        "id": 1299,
+                        "name": "BinaryOperation",
+                        "src": "2141:31:13"
+                      },
+                      {
+                        "attributes": {
+                          "functionReturnParameters": 1257
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "4575726f7065",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Europe\"",
+                              "value": "Europe"
+                            },
+                            "id": 1300,
+                            "name": "Literal",
+                            "src": "2181:8:13"
+                          }
+                        ],
+                        "id": 1301,
+                        "name": "Return",
+                        "src": "2174:15:13"
+                      }
+                    ],
+                    "id": 1302,
+                    "name": "IfStatement",
+                    "src": "2138:51:13"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1253,
+                              "type": "uint8",
+                              "value": "arg"
+                            },
+                            "id": 1303,
+                            "name": "Identifier",
+                            "src": "2197:3:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint8",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_continents_$1102",
+                                      "typeString": "enum MappingEnumStruct.continents"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint8)",
+                                  "value": "uint8"
+                                },
+                                "id": 1304,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "2204:5:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "North_America",
+                                  "referencedDeclaration": null,
+                                  "type": "enum MappingEnumStruct.continents"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1102,
+                                      "type": "type(enum MappingEnumStruct.continents)",
+                                      "value": "continents"
+                                    },
+                                    "id": 1305,
+                                    "name": "Identifier",
+                                    "src": "2210:10:13"
+                                  }
+                                ],
+                                "id": 1306,
+                                "name": "MemberAccess",
+                                "src": "2210:24:13"
+                              }
+                            ],
+                            "id": 1307,
+                            "name": "FunctionCall",
+                            "src": "2204:31:13"
+                          }
+                        ],
+                        "id": 1308,
+                        "name": "BinaryOperation",
+                        "src": "2197:38:13"
+                      },
+                      {
+                        "attributes": {
+                          "functionReturnParameters": 1257
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "4e6f72746820416d6572696361",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"North America\"",
+                              "value": "North America"
+                            },
+                            "id": 1309,
+                            "name": "Literal",
+                            "src": "2244:15:13"
+                          }
+                        ],
+                        "id": 1310,
+                        "name": "Return",
+                        "src": "2237:22:13"
+                      }
+                    ],
+                    "id": 1311,
+                    "name": "IfStatement",
+                    "src": "2194:65:13"
+                  },
+                  {
+                    "attributes": {
+                      "falseBody": null
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "==",
+                          "type": "bool"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1253,
+                              "type": "uint8",
+                              "value": "arg"
+                            },
+                            "id": 1312,
+                            "name": "Identifier",
+                            "src": "2267:3:13"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "uint8",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_enum$_continents_$1102",
+                                      "typeString": "enum MappingEnumStruct.continents"
+                                    }
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "type": "type(uint8)",
+                                  "value": "uint8"
+                                },
+                                "id": 1313,
+                                "name": "ElementaryTypeNameExpression",
+                                "src": "2274:5:13"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "member_name": "South_America",
+                                  "referencedDeclaration": null,
+                                  "type": "enum MappingEnumStruct.continents"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1102,
+                                      "type": "type(enum MappingEnumStruct.continents)",
+                                      "value": "continents"
+                                    },
+                                    "id": 1314,
+                                    "name": "Identifier",
+                                    "src": "2280:10:13"
+                                  }
+                                ],
+                                "id": 1315,
+                                "name": "MemberAccess",
+                                "src": "2280:24:13"
+                              }
+                            ],
+                            "id": 1316,
+                            "name": "FunctionCall",
+                            "src": "2274:31:13"
+                          }
+                        ],
+                        "id": 1317,
+                        "name": "BinaryOperation",
+                        "src": "2267:38:13"
+                      },
+                      {
+                        "attributes": {
+                          "functionReturnParameters": 1257
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "536f75746820416d6572696361",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"South America\"",
+                              "value": "South America"
+                            },
+                            "id": 1318,
+                            "name": "Literal",
+                            "src": "2314:15:13"
+                          }
+                        ],
+                        "id": 1319,
+                        "name": "Return",
+                        "src": "2307:22:13"
+                      }
+                    ],
+                    "id": 1320,
+                    "name": "IfStatement",
+                    "src": "2264:65:13"
+                  }
+                ],
+                "id": 1321,
+                "name": "Block",
+                "src": "1901:433:13"
+              }
+            ],
+            "id": 1322,
+            "name": "FunctionDefinition",
+            "src": "1852:482:13"
+          }
+        ],
+        "id": 1323,
+        "name": "ContractDefinition",
+        "src": "27:2312:13"
+      }
+    ],
+    "id": 1324,
+    "name": "SourceUnit",
+    "src": "0:2341:13"
+  },
   "compiler": {
     "name": "solc",
     "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
@@ -3345,7 +6550,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x30753e4a8aad7f8597332e813735def5dd395028"
+      "address": "0x30753e4a8aad7f8597332e813735def5dd395028",
+      "transactionHash": "0xaba6b83671902b34e9e43cc69e985c23a750a04a1102df971f95f5f779f96e2a"
     },
     "1489573776549": {
       "events": {},
@@ -3366,6 +6572,6 @@
       "updated_at": 1491476112035
     }
   },
-  "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-22T19:34:44.858Z"
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-02-28T16:13:19.836Z"
 }
