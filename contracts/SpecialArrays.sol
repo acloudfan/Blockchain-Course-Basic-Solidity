@@ -2,6 +2,9 @@ pragma solidity ^0.4.4;
 
 /**
  * Demonstrates the use of bytes byte[] and string
+ * 
+ * Ignore keyword pure & view for the time being - its added to suppress warning 
+ * related to mutability - later you will learn about these keywords in details
  **/
 
 contract SpecialArrays {
@@ -19,7 +22,7 @@ contract SpecialArrays {
   string    stringStorage = "abcde";
 
   // Converts the bytes to string
-  function  conversionTest() returns(string) {
+  function conversionTest() public pure returns(string) {
     bytes   memory helloSolidity = "Hello Solidity!!!";
     string  memory converted = string(helloSolidity);
     return converted;
@@ -27,7 +30,7 @@ contract SpecialArrays {
 
 
   // Retrieves the element at specified index 
-  function  getElementAt(uint index) returns(byte){
+  function  getElementAt(uint index) public view returns(byte) {
     // Convert string to bytes
     bytes  memory bytesData = bytes(stringStorage);
     // Get the element at the specified index
@@ -37,7 +40,7 @@ contract SpecialArrays {
   }
 
 
-  function  testAssignment(){
+  function  testAssignment() public {
     // uint8 need to be explicitly converted to byte type
     fixedByteArray = [byte(1),2,3];
     fixedByteArray[0] = 0x05;
@@ -63,12 +66,12 @@ contract SpecialArrays {
     // Memory bytes
     bytes memory memoryBytes;
     memoryBytes = new bytes(20);
-    memoryBytes[0]='a';
+    memoryBytes[0] = "a";
     // Push will give compiler error as push() allowed for storage only
     // memoryBytes.push('c');
   }
 
-  function stringLiterals(){
+  function stringLiterals() public {
     // Storage pointer must be initialized - so following will give an error
     // string pointer;
     string memory asciiString = "abcde";  

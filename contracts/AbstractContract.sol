@@ -1,29 +1,29 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.17;
 
 // Sample of a abstract contract
 // ObjectOrientation contract inherits from this
 
 
-contract  AbstractContract  {
+contract  AbstractContract {
 
-  struct agentStruct {
+  struct AgentStruct {
     string   name;
-    uint   commission;
+    uint     commission;
   }
 
 
-  agentStruct    agent;
+  AgentStruct    agent;
   
   // constructor
-  function  AbstractContract(string name){
+  function  AbstractContract(string name) public {
     agent.name = name;
   }
 
   // Abstract - no body for the function
-  function  calculateAgentCommission(uint16 saleAmount);
+  function  calculateAgentCommission(uint16 saleAmount) public;
 
   // Get the agent information
-  function  getAgentInformation() returns (string name, uint commission){
+  function  getAgentInformation() public view returns (string name, uint commission) {
     name = agent.name;
     commission = agent.commission;
   }

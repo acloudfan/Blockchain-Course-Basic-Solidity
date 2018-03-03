@@ -6,13 +6,13 @@ contract Funcs {
   uint8   ownerAge;
 
   // Constructor
-  function  Funcs(string name, uint8 age){
+  function  Funcs(string name, uint8 age) public {
     ownerName = name;
     ownerAge = age;
   }
 
   // Sets the name
-  function  setOwnerInfo(string name, uint8 age){
+  function  setOwnerInfo(string name, uint8 age) public {
     ownerName = name;
     ownerAge = age;
   }

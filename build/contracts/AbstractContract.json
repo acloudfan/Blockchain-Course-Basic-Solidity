@@ -2,7 +2,32 @@
   "contractName": "AbstractContract",
   "abi": [
     {
+      "inputs": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
       "constant": false,
+      "inputs": [
+        {
+          "name": "saleAmount",
+          "type": "uint16"
+        }
+      ],
+      "name": "calculateAgentCommission",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
       "inputs": [],
       "name": "getAgentInformation",
       "outputs": [
@@ -16,630 +41,1063 @@
         }
       ],
       "payable": false,
-      "type": "function",
-      "stateMutability": "nonpayable"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "saleAmount",
-          "type": "uint16"
-        }
-      ],
-      "name": "calculateAgentCommission",
-      "outputs": [],
-      "payable": false,
-      "type": "function",
-      "stateMutability": "nonpayable"
-    },
-    {
-      "inputs": [
-        {
-          "name": "name",
-          "type": "string"
-        }
-      ],
-      "payable": false,
-      "type": "constructor",
-      "stateMutability": "nonpayable"
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.4;\r\n\r\n// Sample of a abstract contract\r\n// ObjectOrientation contract inherits from this\r\n\r\n\r\ncontract  AbstractContract  {\r\n\r\n  struct agentStruct {\r\n    string   name;\r\n    uint   commission;\r\n  }\r\n\r\n\r\n  agentStruct    agent;\r\n  \r\n  // constructor\r\n  function  AbstractContract(string name){\r\n    agent.name = name;\r\n  }\r\n\r\n  // Abstract - no body for the function\r\n  function  calculateAgentCommission(uint16 saleAmount);\r\n\r\n  // Get the agent information\r\n  function  getAgentInformation() returns (string name, uint commission){\r\n    name = agent.name;\r\n    commission = agent.commission;\r\n  }\r\n}",
+  "source": "pragma solidity ^0.4.17;\r\n\r\n// Sample of a abstract contract\r\n// ObjectOrientation contract inherits from this\r\n\r\n\r\ncontract  AbstractContract {\r\n\r\n  struct AgentStruct {\r\n    string   name;\r\n    uint     commission;\r\n  }\r\n\r\n\r\n  AgentStruct    agent;\r\n  \r\n  // constructor\r\n  function  AbstractContract(string name) public {\r\n    agent.name = name;\r\n  }\r\n\r\n  // Abstract - no body for the function\r\n  function  calculateAgentCommission(uint16 saleAmount) public;\r\n\r\n  // Get the agent information\r\n  function  getAgentInformation() public view returns (string name, uint commission) {\r\n    name = agent.name;\r\n    commission = agent.commission;\r\n  }\r\n}",
   "sourcePath": "C:\\Users\\Rajeev\\Documents\\Course\\Blockchain Course\\workspace\\Blockchain-Course-Basic-Solidity\\contracts\\AbstractContract.sol",
   "ast": {
-    "attributes": {
-      "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/AbstractContract.sol",
-      "exportedSymbols": {
-        "AbstractContract": [
-          44
-        ]
-      }
+    "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/AbstractContract.sol",
+    "exportedSymbols": {
+      "AbstractContract": [
+        44
+      ]
     },
-    "children": [
+    "id": 45,
+    "nodeType": "SourceUnit",
+    "nodes": [
       {
-        "attributes": {
-          "literals": [
-            "solidity",
-            "^",
-            "0.4",
-            ".4"
-          ]
-        },
         "id": 1,
-        "name": "PragmaDirective",
-        "src": "0:23:0"
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
       },
       {
-        "attributes": {
-          "baseContracts": [
-            null
-          ],
-          "contractDependencies": [
-            null
-          ],
-          "contractKind": "contract",
-          "documentation": null,
-          "fullyImplemented": false,
-          "linearizedBaseContracts": [
-            44
-          ],
-          "name": "AbstractContract",
-          "scope": 45
-        },
-        "children": [
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 44,
+        "linearizedBaseContracts": [
+          44
+        ],
+        "name": "AbstractContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
           {
-            "attributes": {
-              "canonicalName": "AbstractContract.agentStruct",
-              "name": "agentStruct",
-              "scope": 44,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "name",
-                  "scope": 6,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "string storage pointer",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "string",
-                      "type": "string storage pointer"
-                    },
-                    "id": 2,
-                    "name": "ElementaryTypeName",
-                    "src": "176:6:0"
-                  }
-                ],
-                "id": 3,
-                "name": "VariableDeclaration",
-                "src": "176:13:0"
-              },
-              {
-                "attributes": {
-                  "constant": false,
-                  "name": "commission",
-                  "scope": 6,
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "type": "uint256",
-                  "value": null,
-                  "visibility": "internal"
-                },
-                "children": [
-                  {
-                    "attributes": {
-                      "name": "uint",
-                      "type": "uint256"
-                    },
-                    "id": 4,
-                    "name": "ElementaryTypeName",
-                    "src": "196:4:0"
-                  }
-                ],
-                "id": 5,
-                "name": "VariableDeclaration",
-                "src": "196:17:0"
-              }
-            ],
+            "canonicalName": "AbstractContract.AgentStruct",
             "id": 6,
-            "name": "StructDefinition",
-            "src": "150:69:0"
-          },
-          {
-            "attributes": {
-              "constant": false,
-              "name": "agent",
-              "scope": 44,
-              "stateVariable": true,
-              "storageLocation": "default",
-              "type": "struct AbstractContract.agentStruct storage ref",
-              "value": null,
-              "visibility": "internal"
-            },
-            "children": [
+            "members": [
               {
-                "attributes": {
-                  "contractScope": null,
-                  "name": "agentStruct",
-                  "referencedDeclaration": 6,
-                  "type": "struct AbstractContract.agentStruct storage pointer"
+                "constant": false,
+                "id": 3,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "176:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string storage pointer"
                 },
-                "id": 7,
-                "name": "UserDefinedTypeName",
-                "src": "227:11:0"
+                "typeName": {
+                  "id": 2,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "176:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "commission",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "196:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "196:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
               }
             ],
+            "name": "AgentStruct",
+            "nodeType": "StructDefinition",
+            "scope": 44,
+            "src": "150:71:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
             "id": 8,
-            "name": "VariableDeclaration",
-            "src": "227:20:0"
+            "name": "agent",
+            "nodeType": "VariableDeclaration",
+            "scope": 44,
+            "src": "229:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_AgentStruct_$6_storage",
+              "typeString": "struct AbstractContract.AgentStruct storage ref"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 7,
+              "name": "AgentStruct",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6,
+              "src": "229:11:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_AgentStruct_$6_storage_ptr",
+                "typeString": "struct AbstractContract.AgentStruct storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
           },
           {
-            "attributes": {
-              "constant": false,
-              "implemented": true,
-              "isConstructor": true,
-              "modifiers": [
-                null
-              ],
-              "name": "AbstractContract",
-              "payable": false,
-              "scope": 44,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "name",
-                      "scope": 20,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
+            "body": {
+              "id": 19,
+              "nodeType": "Block",
+              "src": "323:30:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13,
+                        "name": "agent",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "330:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_AgentStruct_$6_storage",
+                          "typeString": "struct AbstractContract.AgentStruct storage ref"
+                        }
+                      },
+                      "id": 15,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "name",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3,
+                      "src": "330:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
                     },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 9,
-                        "name": "ElementaryTypeName",
-                        "src": "301:6:0"
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 16,
+                      "name": "name",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "343:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
                       }
-                    ],
-                    "id": 10,
-                    "name": "VariableDeclaration",
-                    "src": "301:11:0"
-                  }
-                ],
-                "id": 11,
-                "name": "ParameterList",
-                "src": "300:13:0"
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 12,
-                "name": "ParameterList",
-                "src": "313:0:0"
-              },
-              {
-                "children": [
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "string storage ref"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "name",
-                              "referencedDeclaration": 3,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 8,
-                                  "type": "struct AbstractContract.agentStruct storage ref",
-                                  "value": "agent"
-                                },
-                                "id": 13,
-                                "name": "Identifier",
-                                "src": "320:5:0"
-                              }
-                            ],
-                            "id": 15,
-                            "name": "MemberAccess",
-                            "src": "320:10:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 10,
-                              "type": "string memory",
-                              "value": "name"
-                            },
-                            "id": 16,
-                            "name": "Identifier",
-                            "src": "333:4:0"
-                          }
-                        ],
-                        "id": 17,
-                        "name": "Assignment",
-                        "src": "320:17:0"
-                      }
-                    ],
-                    "id": 18,
-                    "name": "ExpressionStatement",
-                    "src": "320:17:0"
-                  }
-                ],
-                "id": 19,
-                "name": "Block",
-                "src": "313:30:0"
-              }
-            ],
+                    },
+                    "src": "330:17:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 18,
+                  "nodeType": "ExpressionStatement",
+                  "src": "330:17:0"
+                }
+              ]
+            },
             "id": 20,
-            "name": "FunctionDefinition",
-            "src": "274:69:0"
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "AbstractContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "303:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 9,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "303:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "302:13:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "323:0:0"
+            },
+            "scope": 44,
+            "src": "276:77:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           },
           {
-            "attributes": {
-              "body": null,
-              "constant": false,
-              "implemented": false,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
-              "name": "calculateAgentCommission",
-              "payable": false,
-              "scope": 44,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "saleAmount",
-                      "scope": 25,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint16",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint16",
-                          "type": "uint16"
-                        },
-                        "id": 21,
-                        "name": "ElementaryTypeName",
-                        "src": "426:6:0"
-                      }
-                    ],
-                    "id": 22,
-                    "name": "VariableDeclaration",
-                    "src": "426:17:0"
-                  }
-                ],
-                "id": 23,
-                "name": "ParameterList",
-                "src": "425:19:0"
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 24,
-                "name": "ParameterList",
-                "src": "444:0:0"
-              }
-            ],
+            "body": null,
             "id": 25,
-            "name": "FunctionDefinition",
-            "src": "391:54:0"
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "calculateAgentCommission",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22,
+                  "name": "saleAmount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "436:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "436:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "435:19:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "461:0:0"
+            },
+            "scope": 44,
+            "src": "401:61:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           },
           {
-            "attributes": {
-              "constant": false,
-              "implemented": true,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
-              "name": "getAgentInformation",
-              "payable": false,
-              "scope": 44,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 26,
-                "name": "ParameterList",
-                "src": "512:2:0"
-              },
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
+            "body": {
+              "id": 42,
+              "nodeType": "Block",
+              "src": "583:66:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 32,
                       "name": "name",
-                      "scope": 43,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 27,
-                        "name": "ElementaryTypeName",
-                        "src": "524:6:0"
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 28,
+                      "src": "590:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
                       }
-                    ],
-                    "id": 28,
-                    "name": "VariableDeclaration",
-                    "src": "524:11:0"
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 33,
+                        "name": "agent",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "597:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_AgentStruct_$6_storage",
+                          "typeString": "struct AbstractContract.AgentStruct storage ref"
+                        }
+                      },
+                      "id": 34,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "name",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3,
+                      "src": "597:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "src": "590:17:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
                   },
-                  {
-                    "attributes": {
-                      "constant": false,
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "590:17:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 40,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 37,
                       "name": "commission",
-                      "scope": 43,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30,
+                      "src": "614:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 29,
-                        "name": "ElementaryTypeName",
-                        "src": "537:4:0"
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 38,
+                        "name": "agent",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "627:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_AgentStruct_$6_storage",
+                          "typeString": "struct AbstractContract.AgentStruct storage ref"
+                        }
+                      },
+                      "id": 39,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "commission",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5,
+                      "src": "627:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
                       }
-                    ],
-                    "id": 30,
-                    "name": "VariableDeclaration",
-                    "src": "537:15:0"
-                  }
-                ],
-                "id": 31,
-                "name": "ParameterList",
-                "src": "523:30:0"
-              },
-              {
-                "children": [
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "string memory"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 28,
-                              "type": "string memory",
-                              "value": "name"
-                            },
-                            "id": 32,
-                            "name": "Identifier",
-                            "src": "560:4:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "name",
-                              "referencedDeclaration": 3,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 8,
-                                  "type": "struct AbstractContract.agentStruct storage ref",
-                                  "value": "agent"
-                                },
-                                "id": 33,
-                                "name": "Identifier",
-                                "src": "567:5:0"
-                              }
-                            ],
-                            "id": 34,
-                            "name": "MemberAccess",
-                            "src": "567:10:0"
-                          }
-                        ],
-                        "id": 35,
-                        "name": "Assignment",
-                        "src": "560:17:0"
-                      }
-                    ],
-                    "id": 36,
-                    "name": "ExpressionStatement",
-                    "src": "560:17:0"
+                    },
+                    "src": "614:29:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "uint256"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 30,
-                              "type": "uint256",
-                              "value": "commission"
-                            },
-                            "id": 37,
-                            "name": "Identifier",
-                            "src": "584:10:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "commission",
-                              "referencedDeclaration": 5,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 8,
-                                  "type": "struct AbstractContract.agentStruct storage ref",
-                                  "value": "agent"
-                                },
-                                "id": 38,
-                                "name": "Identifier",
-                                "src": "597:5:0"
-                              }
-                            ],
-                            "id": 39,
-                            "name": "MemberAccess",
-                            "src": "597:16:0"
-                          }
-                        ],
-                        "id": 40,
-                        "name": "Assignment",
-                        "src": "584:29:0"
-                      }
-                    ],
-                    "id": 41,
-                    "name": "ExpressionStatement",
-                    "src": "584:29:0"
-                  }
-                ],
-                "id": 42,
-                "name": "Block",
-                "src": "553:66:0"
-              }
-            ],
+                  "id": 41,
+                  "nodeType": "ExpressionStatement",
+                  "src": "614:29:0"
+                }
+              ]
+            },
             "id": 43,
-            "name": "FunctionDefinition",
-            "src": "483:136:0"
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getAgentInformation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "529:2:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 31,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 43,
+                  "src": "553:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 27,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "553:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30,
+                  "name": "commission",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 43,
+                  "src": "566:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "566:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "552:30:0"
+            },
+            "scope": 44,
+            "src": "500:149:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "id": 44,
-        "name": "ContractDefinition",
-        "src": "115:507:0"
+        "scope": 45,
+        "src": "116:536:0"
       }
     ],
+    "src": "0:652:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Rajeev/Documents/Course/Blockchain Course/workspace/Blockchain-Course-Basic-Solidity/contracts/AbstractContract.sol",
+    "exportedSymbols": {
+      "AbstractContract": [
+        44
+      ]
+    },
     "id": 45,
-    "name": "SourceUnit",
-    "src": "0:622:0"
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 44,
+        "linearizedBaseContracts": [
+          44
+        ],
+        "name": "AbstractContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "AbstractContract.AgentStruct",
+            "id": 6,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "176:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string storage pointer"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "176:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string storage pointer"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "commission",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "196:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "196:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "AgentStruct",
+            "nodeType": "StructDefinition",
+            "scope": 44,
+            "src": "150:71:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8,
+            "name": "agent",
+            "nodeType": "VariableDeclaration",
+            "scope": 44,
+            "src": "229:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_AgentStruct_$6_storage",
+              "typeString": "struct AbstractContract.AgentStruct storage ref"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 7,
+              "name": "AgentStruct",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6,
+              "src": "229:11:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_AgentStruct_$6_storage_ptr",
+                "typeString": "struct AbstractContract.AgentStruct storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 19,
+              "nodeType": "Block",
+              "src": "323:30:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13,
+                        "name": "agent",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "330:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_AgentStruct_$6_storage",
+                          "typeString": "struct AbstractContract.AgentStruct storage ref"
+                        }
+                      },
+                      "id": 15,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "name",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3,
+                      "src": "330:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 16,
+                      "name": "name",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "343:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "330:17:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 18,
+                  "nodeType": "ExpressionStatement",
+                  "src": "330:17:0"
+                }
+              ]
+            },
+            "id": 20,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "AbstractContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "303:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 9,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "303:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "302:13:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "323:0:0"
+            },
+            "scope": 44,
+            "src": "276:77:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "id": 25,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "calculateAgentCommission",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 22,
+                  "name": "saleAmount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 25,
+                  "src": "436:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 21,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "436:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "435:19:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "461:0:0"
+            },
+            "scope": 44,
+            "src": "401:61:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 42,
+              "nodeType": "Block",
+              "src": "583:66:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 35,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 32,
+                      "name": "name",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 28,
+                      "src": "590:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 33,
+                        "name": "agent",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "597:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_AgentStruct_$6_storage",
+                          "typeString": "struct AbstractContract.AgentStruct storage ref"
+                        }
+                      },
+                      "id": 34,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "name",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3,
+                      "src": "597:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "src": "590:17:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "id": 36,
+                  "nodeType": "ExpressionStatement",
+                  "src": "590:17:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 40,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 37,
+                      "name": "commission",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 30,
+                      "src": "614:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 38,
+                        "name": "agent",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "627:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_AgentStruct_$6_storage",
+                          "typeString": "struct AbstractContract.AgentStruct storage ref"
+                        }
+                      },
+                      "id": 39,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "commission",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5,
+                      "src": "627:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "614:29:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 41,
+                  "nodeType": "ExpressionStatement",
+                  "src": "614:29:0"
+                }
+              ]
+            },
+            "id": 43,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getAgentInformation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 26,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "529:2:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 31,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 43,
+                  "src": "553:11:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 27,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "553:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30,
+                  "name": "commission",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 43,
+                  "src": "566:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 29,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "566:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "552:30:0"
+            },
+            "scope": 44,
+            "src": "500:149:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 45,
+        "src": "116:536:0"
+      }
+    ],
+    "src": "0:652:0"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "1.0.1",
-  "updatedAt": "2017-11-06T22:12:39.392Z"
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-03-02T18:58:16.476Z"
 }

@@ -28,7 +28,10 @@ contract('Globals', function(accounts) {
     }).then(function(result){
       console.log("data = ",result[0]," sig = ",result[1]);
       console.log("sender = ",result[2]);
-      return globals.throwBehavior("John Smith");
+
+      // Using empty string as arg will throw an exception in the contract
+      // return globals.revertBehavior("");
+      return globals.revertBehavior("John Smith");
     }).then(function(result){
       // Result = txn receipt
       // console.log(result);
