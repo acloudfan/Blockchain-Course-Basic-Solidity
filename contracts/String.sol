@@ -5,17 +5,17 @@ pragma solidity ^0.4.4;
  **/
 contract String {
 
-  string  public  some;
-  bytes   public  bome;
+    string  public  some;
+    bytes   public  bome;
 
-  function String() {
-    // constructor
-    bome="Solidity is FUN!!!";
-    // bome=bytes(some);
-    some=string(bome);
+    function String() public {
+        // constructor
+        bome = "Solidity is FUN!!!";
+        // bome=bytes(some);
+        some = string(bome);
 
-    bome[0]=0x01;
-  }
+        bome[0] = 0x01;
+    }
 }
 
     // // Dynamic bytes array to string

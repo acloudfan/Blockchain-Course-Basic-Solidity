@@ -2,37 +2,41 @@ pragma solidity ^0.4.17;
 
 contract BasicDataTypes {
   
-  uint8   x8 = 255;   // 1 bytes unsined integer
+    uint8   x8 = 255;   // 1 bytes unsined integer
   
-  address owner;      // Address of the owner
-  uint    ownerInitialBalance;
+    address owner;      // Address of the owner
+    uint    ownerInitialBalance;
 
-  function BasicDataTypes(address addr) public {
+    function BasicDataTypes(address addr) public {
 
 
-    owner = addr;
-    ownerInitialBalance = owner.balance;
+        owner = addr;
+        ownerInitialBalance = owner.balance;
 
-    int  x256;     // 32 byte signed integer
+        int  x256;     // 32 byte signed integer
 
-    x256 = x8;     // Compilation successful
+        x256 = x8;     // Compilation successful
 
-    //x8 = x256;        // Fails compilation as the maximum value of int256 cannot be accomodated in uint8
+        //x8 = x256;        // Fails compilation as the maximum value of int256 cannot be accomodated in uint8
 
-    x8 = uint8(x256);   // Explicit type coversion
+        x8 = uint8(x256);   // Explicit type coversion
 
-    bool  flag = true;  // Un initialized boolean is set to False
+        bool  flag = true;  // Un initialized boolean is set to False
 
-    // if(1){ } will not compile
-    if (1 > 0) {}         // This will work because expression evaluates to bool
+        // if(1){ } will not compile
+        if (1 > 0) {  // This will work because expression evaluates to bool
+            return;
+        }         
 
-    var deduced = x8;    // Compiler automagically assigns the type uin8 to variable deduced;
-    // deduced = x256;   // This will fail to compile because deduced is set to type uin8
+        var deduced = x8;    // Compiler automagically assigns the type uin8 to variable deduced;
+        // deduced = x256;   // This will fail to compile because deduced is set to type uin8
 
-    uint balance = owner.balance;
+        uint balance = owner.balance;
 
-    // Ignore this line - This is just make compile happy - suppress unused local var warnings - Aug 8, 2017
-    if ((balance+deduced) == 0 || flag ) { }
-  }
+        // Ignore this line - This is just make compile happy - suppress unused local var warnings - Aug 8, 2017
+        if ((balance+deduced) == 0 || flag ) {
+            return;
+        }
+    }
 
 }
