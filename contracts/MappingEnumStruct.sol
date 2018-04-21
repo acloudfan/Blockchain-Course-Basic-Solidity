@@ -34,27 +34,40 @@ contract MappingEnumStruct {
 
         if(cont != uint8(continents.Europe)) return false;
 
+        // Declare the structure variable
         country memory ctry;
+
         // 3 ways to initialize this struct
-        // ctry = country(nm, continents(cont), pop);
-        // ctry = country({name:nm, continent:continents(cont), populationInMillion:pop});
+
+        // #1. provide the attribute values in order they appear in the declaration
+        ctry = country(nm, continents(cont), pop);
+
+        // #2. use a json structure
+        ctry = country({name:nm, continent:continents(cont), populationInMillion:pop});
+
+        // #3. use the . notation
         ctry.name = nm;
         ctry.continent = continents(cont);
         ctry.populationInMillion = pop;
+
         // Push the country in the array
         europeanCountries.push(ctry);
         return true;
     } 
 
     // Add a capital
-    function addCapital(string country, string capital) public {
+    function addCapital(string countryCheck, string capital) public {
+
         // Store the capital on per country basis
-        capitals[country] = capital;
+        
+        capitals[countryCheck] = capital;
     }
 
     // Returns the capital for the country 
     function getCapital(string countryCheck) public view returns (string){
+
         return capitals[countryCheck];
+
     }
 
     // Remove the key value pair from the mapping
